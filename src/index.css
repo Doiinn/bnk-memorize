@@ -1,5 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Mitr', sans-serif;
+}
+
+.is-active > div {
+  background-color: #FF99C3;
+  color: white;
 }

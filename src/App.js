@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Flex, Box } from 'grid-styled'
 import Router from './routes'
@@ -21,8 +21,7 @@ import Router from './routes'
 // }
 
 const Header = styled.nav`
-  background-color: #C995C1;
-  font-family: 'Mitr', sans-serif;
+  background-color: #E5AADC;
   color: white;
   position: fixed;
   top: 0;
@@ -41,6 +40,14 @@ const ButtonMenu = styled.div`
   background-color: white;
   text-align: center;
   cursor: pointer;
+  padding: 5px;
+  outline: 3px;
+  outline-color: #FF90C3;
+  outline-style: solid;
+  :hover {
+    background-color: #FF99C3;
+    color: white;
+  }
 `
 const removeUnderline = {
   textDecoration: 'none'
@@ -56,16 +63,16 @@ class App extends Component {
               <Label>BNK MEMORIZE</Label>
             </Box>
             <Box p={2} width={1 / 8} m='auto'>
-              <Link to="/" style={removeUnderline}><ButtonMenu>หน้าแรก</ButtonMenu></Link>
+              <NavLink exact to="/" activeClassName="is-active" style={removeUnderline}><ButtonMenu>หน้าแรก</ButtonMenu></NavLink>
             </Box>
             <Box p={2} width={1 / 8} m='auto'>
-              <Link to="/quiz" style={removeUnderline}><ButtonMenu>คำถาม</ButtonMenu></Link>
+              <NavLink to="/quiz" activeClassName="is-active" style={removeUnderline}><ButtonMenu>คำถาม</ButtonMenu></NavLink>
             </Box>
             <Box p={2} width={1 / 8} m='auto'>
-              <Link to="/stat" style={removeUnderline}><ButtonMenu>สถิติ</ButtonMenu></Link>
+              <NavLink to="/stat" activeClassName="is-active" style={removeUnderline}><ButtonMenu>สถิติ</ButtonMenu></NavLink>
             </Box>
             <Box p={2} width={1 / 8} m='auto'>
-              <Link to="/about" style={removeUnderline}><ButtonMenu>เกี่ยวกับ</ButtonMenu></Link>
+              <NavLink to="/about" activeClassName="is-active" style={removeUnderline}><ButtonMenu>เกี่ยวกับ</ButtonMenu></NavLink>
             </Box>
           </Flex>
         </Header>

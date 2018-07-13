@@ -1,9 +1,9 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import Home from '../pages/home'
-import Quiz from '../pages/quiz'
-import Stat from '../pages/stat'
-import About from '../pages/about'
+import Home from '../pages/Home'
+import Quiz from '../pages/Quiz'
+import Stat from '../pages/Stat'
+import About from '../pages/About'
 
 export default () => (
   <div>
