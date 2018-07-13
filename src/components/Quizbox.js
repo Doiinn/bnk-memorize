@@ -35,7 +35,9 @@ export const QuizBox = ({quizname, quizpic}) => {
     bottom: 100px;
     margin: 0 auto;
     color: white;
+    text-shadow: 1px 1px 2px black;
     cursor: pointer;
+    user-select: none;
   `
 
   return (
