@@ -8,7 +8,8 @@ import About from '../pages/About'
 export default () => (
   <div>
     <Route exact path="/" component={Home} />
-    <Route path="/quiz" component={Quiz} />
+    <Route exact path="/quiz" component={Quiz} />
+    <Route path="/quiz/:id" component={Quiz} />
     <Route path="/stat" component={Stat} />
     <Route path="/about" component={About} />
   </div>
