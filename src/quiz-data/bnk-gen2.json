@@ -1,0 +1,114 @@
+{
+    "id": 1,
+    "quizname": "รู้ไหม ใครเอ่ย ?",
+    "data": [
+        {
+            "name": "Aom",
+            "pic": "static/pic/bnk-gen2/aom.jpg"
+        },
+        {
+            "name": "Bamboo",
+            "pic": "static/pic/bnk-gen2/bamboo.jpg"
+        },
+        {
+            "name": "Cake",
+            "pic": "static/pic/bnk-gen2/cake.jpg"
+        },
+        {
+            "name": "Deenee",
+            "pic": "static/pic/bnk-gen2/deenee.jpg"
+        },
+        {
+            "name": "Faii",
+            "pic": "static/pic/bnk-gen2/faii.jpg"
+        },
+        {
+            "name": "Fifa",
+            "pic": "static/pic/bnk-gen2/fifa.jpg"
+        },
+        {
+            "name": "Fond",
+            "pic": "static/pic/bnk-gen2/fond.jpg"
+        },
+        {
+            "name": "Gygee",
+            "pic": "static/pic/bnk-gen2/gygee.jpg"
+        },
+        {
+            "name": "Juné",
+            "pic": "static/pic/bnk-gen2/juné.jpg"
+        },
+        {
+            "name": "Khamin",
+            "pic": "static/pic/bnk-gen2/khamin.jpg"
+        },
+        {
+            "name": "Kheng",
+            "pic": "static/pic/bnk-gen2/kheng.jpg"
+        },
+        {
+            "name": "Maira",
+            "pic": "static/pic/bnk-gen2/maira.jpg"
+        },
+        {
+            "name": "Mewnich",
+            "pic": "static/pic/bnk-gen2/mewnich.jpg"
+        },
+        {
+            "name": "Minmin",
+            "pic": "static/pic/bnk-gen2/minmin.jpg"
+        },
+        {
+            "name": "Myyu",
+            "pic": "static/pic/bnk-gen2/myyu.jpg"
+        },
+        {
+            "name": "Natherine",
+            "pic": "static/pic/bnk-gen2/natherine.jpg"
+        },
+        {
+            "name": "New",
+            "pic": "static/pic/bnk-gen2/new.jpg"
+        },
+        {
+            "name": "Niky",
+            "pic": "static/pic/bnk-gen2/niky.jpg"
+        },
+        {
+            "name": "Nine",
+            "pic": "static/pic/bnk-gen2/nine.jpg"
+        },
+        {
+            "name": "Oom",
+            "pic": "static/pic/bnk-gen2/oom.jpg"
+        },
+        {
+            "name": "Pakwan",
+            "pic": "static/pic/bnk-gen2/pakwan.jpg"
+        },
+        {
+            "name": "Panda",
+            "pic": "static/pic/bnk-gen2/panda.jpg"
+        },
+        {
+            "name": "Phukkhom",
+            "pic": "static/pic/bnk-gen2/phukkhom.jpg"
+        },
+        {
+            "name": "Ratah",
+            "pic": "static/pic/bnk-gen2/ratah.jpg"
+        },
+        {
+            "name": "Stang",
+            "pic": "static/pic/bnk-gen2/stang.jpg"
+        },
+        {
+            "name": "View",
+            "pic": "static/pic/bnk-gen2/view.jpg"
+        },
+        {
+            "name": "Wee",
+            "pic": "static/pic/bnk-gen2/wee.jpg"
+        }
+    ]
+}
