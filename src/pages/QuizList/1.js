@@ -1,6 +1,7 @@
 import React from 'react'
 import { Background } from '../../components/Background'
-// import pic from '../statics/pics/bnk48/gen2/small/all-members.jpg'
+import styled from 'styled-components'
+import {Flex, Box} from 'grid-styled'
 import member from '../../quiz-data/bnk-gen2.json'
 
 const getRandomInt = (max) => {
@@ -11,7 +12,6 @@ export default () => {
   const dataName = (member.data).map((values, index, array) => {
     return values.name
   })
-  
   // eslint-disable-next-line
   const ListItem = (props) => {
     // return <li>{props.value}</li>
@@ -19,18 +19,44 @@ export default () => {
     return <img src={props.value} />
   }
 
+  const Img = styled.div`
+    width: 20vw;
+    height: 52vh;
+    margin: 1.5em 0em;
+    background-image: url(${props => props.src});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    outline: 0.5em;
+    outline-color: #FF90C3;
+    outline-style: solid;
+  `
+
+const ChoiceButton = styled.div`
+  color: black;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  outline: 3px;
+  outline-color: #FF90C3;
+  outline-style: solid;
+  :hover {
+    background-color: #FF99C3;
+    color: white;
+  }
+`
+
   const NumberList = (props) => {
     const numbers = props.numbers
-    const random = getRandomInt(27)
     let choice = []
-    // let used = []
     while (choice.length !== 4) {
       let inRandom = getRandomInt(27)
-      if (!(inRandom in choice)) {
+      if (choice.indexOf(inRandom) === -1) {
         choice.push(inRandom)
       }
     }
-
+    const result = choice[getRandomInt(4)]
     console.log(choice)
     return (
       // <ul>
@@ -39,11 +65,25 @@ export default () => {
       //   )}
       // </ul>
       <div>
-        <img src={numbers[random]} alt="Who ?"/>
-        <p>{dataName[random]}</p>
-        <p>{dataName[getRandomInt(27)]}</p>
-        <p>{dataName[getRandomInt(27)]}</p>
-        <p>{dataName[getRandomInt(27)]}</p>
+        <Flex>
+          <Box m='auto'>
+            <Img src={numbers[result]} alt="Who ?"/>
+          </Box>
+        </Flex>
+        <Flex>
+          <Box width={1 / 4}>
+            <ChoiceButton>{dataName[choice[0]]}</ChoiceButton>
+          </Box>
+          <Box width={1 / 4}>
+            <ChoiceButton>{dataName[choice[1]]}</ChoiceButton>
+          </Box>
+          <Box width={1 / 4}>
+            <ChoiceButton>{dataName[choice[2]]}</ChoiceButton>
+          </Box>
+          <Box width={1 / 4}>
+            <ChoiceButton>{dataName[choice[3]]}</ChoiceButton>
+          </Box>
+        </Flex>
       </div>
     )
   }
