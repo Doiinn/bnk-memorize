@@ -32,20 +32,24 @@ export default () => {
     outline-style: solid;
   `
 
-const ChoiceButton = styled.div`
-  color: black;
-  background-color: white;
-  text-align: center;
-  cursor: pointer;
-  padding: 5px;
-  outline: 3px;
-  outline-color: #FF90C3;
-  outline-style: solid;
-  :hover {
-    background-color: #FF99C3;
-    color: white;
+  const ChoiceButton = styled.div`
+    font-size: 1.4em;
+    color: black;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 0px;
+    outline: 3px;
+    outline-color: #FF90C3;
+    outline-style: solid;
+    :hover {
+      background-color: #FF99C3;
+      color: white;
+    }
+  `
+  const answer = (test) => (e) => {
+    alert(test)
   }
-`
 
   const NumberList = (props) => {
     const numbers = props.numbers
@@ -70,18 +74,20 @@ const ChoiceButton = styled.div`
             <Img src={numbers[result]} alt="Who ?"/>
           </Box>
         </Flex>
-        <Flex>
-          <Box width={1 / 4}>
-            <ChoiceButton>{dataName[choice[0]]}</ChoiceButton>
+        <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={3} mb={2}>
+          <Box width={1 / 5} m='auto'>
+            <ChoiceButton onClick={answer(dataName[choice[0]])}>{dataName[choice[0]]}</ChoiceButton>
           </Box>
-          <Box width={1 / 4}>
-            <ChoiceButton>{dataName[choice[1]]}</ChoiceButton>
+          <Box width={1 / 5} m='auto'>
+            <ChoiceButton onClick={answer(dataName[choice[1]])}>{dataName[choice[1]]}</ChoiceButton>
           </Box>
-          <Box width={1 / 4}>
-            <ChoiceButton>{dataName[choice[2]]}</ChoiceButton>
+        </Flex>
+        <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={4}>
+          <Box width={1 / 5} m='auto'>
+            <ChoiceButton onClick={answer(dataName[choice[2]])}>{dataName[choice[2]]}</ChoiceButton>
           </Box>
-          <Box width={1 / 4}>
-            <ChoiceButton>{dataName[choice[3]]}</ChoiceButton>
+          <Box width={1 / 5} m='auto'>
+            <ChoiceButton onClick={answer(dataName[choice[3]])}>{dataName[choice[3]]}</ChoiceButton>
           </Box>
         </Flex>
       </div>
