@@ -8,51 +8,72 @@ const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max))
 }
 
-export default () => {
-  const dataName = (member.data).map((values, index, array) => {
-    return values.name
-  })
+const dataName = (member.data).map((values, index, array) => {
+  return values.name
+})
+
+// eslint-disable-next-line
+const ListItem = (props) => {
+  // return <li>{props.value}</li>
   // eslint-disable-next-line
-  const ListItem = (props) => {
-    // return <li>{props.value}</li>
-    // eslint-disable-next-line
-    return <img src={props.value} />
+  return <img src={props.value} />
+}
+
+const Img = styled.div`
+  width: 20vw;
+  height: 52vh;
+  margin: 1.5em 0em;
+  background-image: url(${props => props.src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  outline: 0.5em;
+  outline-color: #FF90C3;
+  outline-style: solid;
+`
+
+const ChoiceButton = styled.div`
+  font-size: 1.4em;
+  color: black;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 0px;
+  outline: 3px;
+  outline-color: #FF90C3;
+  outline-style: solid;
+  :hover {
+    background-color: #FF99C3;
+    color: white;
   }
+`
+// eslint-disable-next-line
+const answer = (test) => (e) => {
+  alert(test)
+}
 
-  const Img = styled.div`
-    width: 20vw;
-    height: 52vh;
-    margin: 1.5em 0em;
-    background-image: url(${props => props.src});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    outline: 0.5em;
-    outline-color: #FF90C3;
-    outline-style: solid;
-  `
+// for (let index in member.data) {
+//   console.log(member.data[index])
+// }
 
-  const ChoiceButton = styled.div`
-    font-size: 1.4em;
-    color: black;
-    background-color: white;
-    text-align: center;
-    cursor: pointer;
-    padding: 10px 0px;
-    outline: 3px;
-    outline-color: #FF90C3;
-    outline-style: solid;
-    :hover {
-      background-color: #FF99C3;
-      color: white;
+const data = (member.data).map((values, index, array) => {
+  return values.pic
+})
+
+class NumberList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      answer: Number,
+      choice: []
     }
-  `
-  const answer = (test) => (e) => {
-    alert(test)
   }
 
-  const NumberList = (props) => {
-    const numbers = props.numbers
+  componentDidMount() {
+    this.randomChoice()
+  }
+
+  randomChoice() {
     let choice = []
     while (choice.length !== 4) {
       let inRandom = getRandomInt(27)
@@ -60,50 +81,52 @@ export default () => {
         choice.push(inRandom)
       }
     }
-    const result = choice[getRandomInt(4)]
-    console.log(choice)
+    this.setState({answer: choice[getRandomInt(4)], choice: choice})
+  }
+
+  answer(test) {
+    alert('Answer: ' + dataName[this.state.answer])
+    this.randomChoice()
+  }
+
+  render() {
+    const numbers = this.props.numbers
     return (
-      // <ul>
-      //   {numbers.map((number) =>
-      //     <ListItem key={number.toString()} value={number} />
-      //   )}
-      // </ul>
       <div>
         <Flex>
           <Box m='auto'>
-            <Img src={numbers[result]} alt="Who ?"/>
+            <Img src={numbers[this.state.answer]} alt="Who ?" />
           </Box>
         </Flex>
         <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={3} mb={2}>
           <Box width={1 / 5} m='auto'>
-            <ChoiceButton onClick={answer(dataName[choice[0]])}>{dataName[choice[0]]}</ChoiceButton>
+            <ChoiceButton onClick={this.answer.bind(this, dataName[this.state.choice[0]])}>{dataName[this.state.choice[0]]}</ChoiceButton>
           </Box>
           <Box width={1 / 5} m='auto'>
-            <ChoiceButton onClick={answer(dataName[choice[1]])}>{dataName[choice[1]]}</ChoiceButton>
+            <ChoiceButton onClick={this.answer.bind(this, dataName[this.state.choice[1]])}>{dataName[this.state.choice[1]]}</ChoiceButton>
           </Box>
         </Flex>
         <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={4}>
           <Box width={1 / 5} m='auto'>
-            <ChoiceButton onClick={answer(dataName[choice[2]])}>{dataName[choice[2]]}</ChoiceButton>
+            <ChoiceButton onClick={this.answer.bind(this, dataName[this.state.choice[2]])}>{dataName[this.state.choice[2]]}</ChoiceButton>
           </Box>
           <Box width={1 / 5} m='auto'>
-            <ChoiceButton onClick={answer(dataName[choice[3]])}>{dataName[choice[3]]}</ChoiceButton>
+            <ChoiceButton onClick={this.answer.bind(this, dataName[this.state.choice[3]])}>{dataName[this.state.choice[3]]}</ChoiceButton>
           </Box>
         </Flex>
       </div>
     )
   }
-  // for (let index in member.data) {
-  //   console.log(member.data[index])
-  // }
-
-  const data = (member.data).map((values, index, array) => {
-    return values.pic
-  })
-
-  return (
-    <Background color="#FFD7F9">
-      <NumberList numbers={data} />
-    </Background>
-  )
 }
+
+class InQuiz extends React.Component {
+  render() {
+    return (
+      <Background color="#FFD7F9">
+        <NumberList numbers={data} />
+      </Background>
+    )
+  }
+}
+
+export default InQuiz
