@@ -16,6 +16,8 @@
     "prettier": "^1.13.6",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-pose": "^3.3.4",
+    "react-pose-text": "^3.1.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "standard": "^11.0.1",

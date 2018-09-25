@@ -2,6 +2,9 @@ import React from 'react'
 import { Background } from '../../components/Background'
 import styled from 'styled-components'
 import {Flex, Box} from 'grid-styled'
+import posed from 'react-pose'
+import SplitText from 'react-pose-text'
+import './styles.css'
 import member from '../../quiz-data/bnk-gen2.json'
 
 const getRandomInt = (max) => {
@@ -12,18 +15,29 @@ const dataName = (member.data).map((values, index, array) => {
   return values.name
 })
 
-// eslint-disable-next-line
-const ListItem = (props) => {
-  // return <li>{props.value}</li>
-  // eslint-disable-next-line
-  return <img src={props.value} />
-}
+const animatedImg = posed.div({
+  start: {
+    scale: 1.1,
+    transition: {
+      type: 'spring',
+      stiffness: 50,
+      damping: 0,
+      duration: 500
+    },
+    opacity: 0
+  },
+  end: {
+    scale: 1,
+    transition: { ease: 'easeOut', duration: 500 },
+    opacity: 1
+  }
+})
 
-const Img = styled.div`
+const Img = styled(animatedImg)`
   width: 20vw;
   height: 52vh;
-  margin: 1.5em 0em;
-  background-image: url(${props => props.src.pic[getRandomInt(2)]});
+  margin: 1.5em auto;
+  background-image: url(${props => props.src});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -58,29 +72,68 @@ const answer = (test) => (e) => {
   alert(test)
 }
 
-const data = (member.data).map((values, index, array) => {
-  return values.pic[0]
-})
-
 let ansHistory = []
 
-class NumberList extends React.Component {
+const Square = posed.div({
+  idle: { scale: 1 },
+  hovered: { scale: 1.5 }
+})
+
+const StyledSquare = styled(Square)`
+  width: 100px;
+  height: 100px;
+  background: #FF90C3;
+  text-align: center;
+  display: inline-block;
+`
+
+const charPoses = {
+  exit: { opacity: 0, y: 20 },
+  enter: {
+    opacity: 1,
+    y: 0,
+    delay: 50
+  }
+}
+
+let selectPic = getRandomInt(2)
+
+class Question extends React.Component {
   constructor(props) {
     super(props)
     this.randomChoice = this.randomChoice.bind(this)
     this.answer = this.answer.bind(this)
     this.state = {
       answer: 0,
-      choice: []
+      choice: [],
+      timer: 20,
+      isPicShow: false
     }
+    this.tick = this.tick.bind(this)
+    this.tick()
   }
 
   componentDidMount() {
     this.randomChoice()
   }
 
+  tick() {
+    this.timer = setInterval(() => {
+      if (this.state.timer > 1) {
+        this.setState({timer: this.state.timer - 1})
+      } else {
+        this.setState({timer: 0})
+        clearInterval(this.timer)
+        setTimeout(() => {
+          alert('Time Out!')
+        }, 250)
+      }
+    }, 1000)
+  }
+
   randomChoice() {
     let choice = []
+    console.log(ansHistory)
     while (choice.length !== 4) {
       let inRandom = getRandomInt(27)
       if (choice.indexOf(inRandom) === -1) {
@@ -94,11 +147,14 @@ class NumberList extends React.Component {
     }
 
     while (ansHistory.includes(answer)) {
+      console.log('Answer: ' + answer)
       answer = choice[getRandomInt(4)]
     }
 
     ansHistory.push(answer)
-    this.setState({answer: answer, choice: choice})
+    selectPic = getRandomInt(2)
+    console.log('answer: ' + answer)
+    this.setState({answer: answer, choice: choice, isPicShow: true})
   }
 
   answer(choose) {
@@ -108,48 +164,46 @@ class NumberList extends React.Component {
       alert('Wrong')
     }
 
+    this.setState({isPicShow: false})
+
     setTimeout(() => {
       this.randomChoice()
-    }, 250)
+    }, 350)
   }
 
   render() {
     return (
-      <div>
+      <Background color="#FFD7F9">
         <Flex>
-          <Box m='auto'>
-            <Img src={member.data[this.state.answer]}alt="Who ?" />
+          <Box mt={3} ml={3} width={1 / 4}>
+            <StyledSquare pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={charPoses}>{this.state.timer.toString()}</SplitText></span></StyledSquare>
+          </Box>
+          <Box m='auto' width={2 / 4}>
+            <Img src={member.data[this.state.answer].pic[selectPic]}alt="Who ?" pose={this.state.isPicShow ? 'end' : 'start'} />
+          </Box>
+          <Box m='auto' width={1 / 4}>
+            <span>Score: </span>
           </Box>
         </Flex>
         <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={3} mb={2}>
-          <Box width={1 / 5} m='auto'>
+          <Box width={1 / 4} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, dataName[this.state.choice[0]])}>{dataName[this.state.choice[0]]}</ChoiceButton>
           </Box>
-          <Box width={1 / 5} m='auto'>
+          <Box width={1 / 4} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, dataName[this.state.choice[1]])}>{dataName[this.state.choice[1]]}</ChoiceButton>
           </Box>
         </Flex>
         <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={4}>
-          <Box width={1 / 5} m='auto'>
+          <Box width={1 / 4} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, dataName[this.state.choice[2]])}>{dataName[this.state.choice[2]]}</ChoiceButton>
           </Box>
-          <Box width={1 / 5} m='auto'>
+          <Box width={1 / 4} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, dataName[this.state.choice[3]])}>{dataName[this.state.choice[3]]}</ChoiceButton>
           </Box>
         </Flex>
-      </div>
-    )
-  }
-}
-
-class InQuiz extends React.Component {
-  render() {
-    return (
-      <Background color="#FFD7F9">
-        <NumberList numbers={data} />
       </Background>
     )
   }
 }
 
-export default InQuiz
+export default Question
