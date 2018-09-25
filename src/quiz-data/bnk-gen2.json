@@ -4,111 +4,111 @@
     "data": [
         {
             "name": "Aom",
-            "pic": "static/pic/bnk-gen2/aom.jpg"
+            "pic": ["static/pic/bnk-gen2/aom.jpg", "static/pic/bnk-gen2/aom-kimiwa.jpg"]
         },
         {
             "name": "Bamboo",
-            "pic": "static/pic/bnk-gen2/bamboo.jpg"
+            "pic": ["static/pic/bnk-gen2/bamboo.jpg", "static/pic/bnk-gen2/bamboo-kimiwa.jpg"]
         },
         {
             "name": "Cake",
-            "pic": "static/pic/bnk-gen2/cake.jpg"
+            "pic": ["static/pic/bnk-gen2/cake.jpg", "static/pic/bnk-gen2/cake-kimiwa.jpg"]
         },
         {
             "name": "Deenee",
-            "pic": "static/pic/bnk-gen2/deenee.jpg"
+            "pic": ["static/pic/bnk-gen2/deenee.jpg", "static/pic/bnk-gen2/deenee-kimiwa.jpg"]
         },
         {
             "name": "Faii",
-            "pic": "static/pic/bnk-gen2/faii.jpg"
+            "pic": ["static/pic/bnk-gen2/faii.jpg", "static/pic/bnk-gen2/faii-kimiwa.jpg"]
         },
         {
             "name": "Fifa",
-            "pic": "static/pic/bnk-gen2/fifa.jpg"
+            "pic": ["static/pic/bnk-gen2/fifa.jpg", "static/pic/bnk-gen2/fifa-kimiwa.jpg"]
         },
         {
             "name": "Fond",
-            "pic": "static/pic/bnk-gen2/fond.jpg"
+            "pic": ["static/pic/bnk-gen2/fond.jpg", "static/pic/bnk-gen2/fond-kimiwa.jpg"]
         },
         {
             "name": "Gygee",
-            "pic": "static/pic/bnk-gen2/gygee.jpg"
+            "pic": ["static/pic/bnk-gen2/gygee.jpg", "static/pic/bnk-gen2/gygee-kimiwa.jpg"]
         },
         {
             "name": "Juné",
-            "pic": "static/pic/bnk-gen2/juné.jpg"
+            "pic": ["static/pic/bnk-gen2/juné.jpg", "static/pic/bnk-gen2/juné-kimiwa.jpg"]
         },
         {
             "name": "Khamin",
-            "pic": "static/pic/bnk-gen2/khamin.jpg"
+            "pic": ["static/pic/bnk-gen2/khamin.jpg", "static/pic/bnk-gen2/khamin-kimiwa.jpg"]
         },
         {
             "name": "Kheng",
-            "pic": "static/pic/bnk-gen2/kheng.jpg"
+            "pic": ["static/pic/bnk-gen2/kheng.jpg", "static/pic/bnk-gen2/kheng-kimiwa.jpg"]
         },
         {
             "name": "Maira",
-            "pic": "static/pic/bnk-gen2/maira.jpg"
+            "pic": ["static/pic/bnk-gen2/maira.jpg", "static/pic/bnk-gen2/maira-kimiwa.jpg"]
         },
         {
             "name": "Mewnich",
-            "pic": "static/pic/bnk-gen2/mewnich.jpg"
+            "pic": ["static/pic/bnk-gen2/mewnich.jpg", "static/pic/bnk-gen2/mewnich-kimiwa.jpg"]
         },
         {
             "name": "Minmin",
-            "pic": "static/pic/bnk-gen2/minmin.jpg"
+            "pic": ["static/pic/bnk-gen2/minmin.jpg", "static/pic/bnk-gen2/minmin-kimiwa.jpg"]
         },
         {
             "name": "Myyu",
-            "pic": "static/pic/bnk-gen2/myyu.jpg"
+            "pic": ["static/pic/bnk-gen2/myyu.jpg", "static/pic/bnk-gen2/myyu-kimiwa.jpg"]
         },
         {
             "name": "Natherine",
-            "pic": "static/pic/bnk-gen2/natherine.jpg"
+            "pic": ["static/pic/bnk-gen2/natherine.jpg", "static/pic/bnk-gen2/natherine-kimiwa.jpg"]
         },
         {
             "name": "New",
-            "pic": "static/pic/bnk-gen2/new.jpg"
+            "pic": ["static/pic/bnk-gen2/new.jpg", "static/pic/bnk-gen2/new-kimiwa.jpg"]
         },
         {
             "name": "Niky",
-            "pic": "static/pic/bnk-gen2/niky.jpg"
+            "pic": ["static/pic/bnk-gen2/niky.jpg", "static/pic/bnk-gen2/niky-kimiwa.jpg"]
         },
         {
             "name": "Nine",
-            "pic": "static/pic/bnk-gen2/nine.jpg"
+            "pic": ["static/pic/bnk-gen2/nine.jpg", "static/pic/bnk-gen2/nine-kimiwa.jpg"]
         },
         {
             "name": "Oom",
-            "pic": "static/pic/bnk-gen2/oom.jpg"
+            "pic": ["static/pic/bnk-gen2/oom.jpg", "static/pic/bnk-gen2/oom-kimiwa.jpg"]
         },
         {
             "name": "Pakwan",
-            "pic": "static/pic/bnk-gen2/pakwan.jpg"
+            "pic": ["static/pic/bnk-gen2/pakwan.jpg", "static/pic/bnk-gen2/pakwan-kimiwa.jpg"]
         },
         {
             "name": "Panda",
-            "pic": "static/pic/bnk-gen2/panda.jpg"
+            "pic": ["static/pic/bnk-gen2/panda.jpg", "static/pic/bnk-gen2/panda-kimiwa.jpg"]
         },
         {
             "name": "Phukkhom",
-            "pic": "static/pic/bnk-gen2/phukkhom.jpg"
+            "pic": ["static/pic/bnk-gen2/phukkhom.jpg", "static/pic/bnk-gen2/phukkhom-kimiwa.jpg"]
         },
         {
             "name": "Ratah",
-            "pic": "static/pic/bnk-gen2/ratah.jpg"
+            "pic": ["static/pic/bnk-gen2/ratah.jpg", "static/pic/bnk-gen2/ratah-kimiwa.jpg"]
         },
         {
             "name": "Stang",
-            "pic": "static/pic/bnk-gen2/stang.jpg"
+            "pic": ["static/pic/bnk-gen2/stang.jpg", "static/pic/bnk-gen2/stang-kimiwa.jpg"]
         },
         {
             "name": "View",
-            "pic": "static/pic/bnk-gen2/view.jpg"
+            "pic": ["static/pic/bnk-gen2/view.jpg", "static/pic/bnk-gen2/view-kimiwa.jpg"]
         },
         {
             "name": "Wee",
-            "pic": "static/pic/bnk-gen2/wee.jpg"
+            "pic": ["static/pic/bnk-gen2/wee.jpg", "static/pic/bnk-gen2/wee-kimiwa.jpg"]
         }
     ]
 }

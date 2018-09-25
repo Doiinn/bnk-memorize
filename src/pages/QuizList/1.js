@@ -42,6 +42,12 @@ const ChoiceButton = styled.div`
   outline: 3px;
   outline-color: #FF90C3;
   outline-style: solid;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   :hover {
     background-color: #FF99C3;
     color: white;
@@ -52,24 +58,23 @@ const answer = (test) => (e) => {
   alert(test)
 }
 
-// for (let index in member.data) {
-//   console.log(member.data[index])
-// }
-
 const data = (member.data).map((values, index, array) => {
-  return values.pic
+  return values.pic[0]
 })
 
 class NumberList extends React.Component {
   constructor(props) {
     super(props)
+    this.randomChoice = this.randomChoice.bind(this)
+    this.answer = this.answer.bind(this)
     this.state = {
-      answer: Number,
+      answer: 0,
       choice: []
     }
+    this.randomChoice = this.randomChoice.bind(this)
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.randomChoice()
   }
 
@@ -84,18 +89,23 @@ class NumberList extends React.Component {
     this.setState({answer: choice[getRandomInt(4)], choice: choice})
   }
 
-  answer(test) {
-    alert('Answer: ' + dataName[this.state.answer])
-    this.randomChoice()
+  answer(choose) {
+    if (choose === dataName[this.state.answer]) {
+      alert('Correct')
+    } else {
+      alert('Wrong')
+    }
+    this.timeout = setTimeout(() => {
+      this.randomChoice()
+    }, 100)
   }
 
   render() {
-    const numbers = this.props.numbers
     return (
       <div>
         <Flex>
           <Box m='auto'>
-            <Img src={numbers[this.state.answer]} alt="Who ?" />
+            <Img src={member.data[this.state.answer].pic[getRandomInt(2)]}alt="Who ?" />
           </Box>
         </Flex>
         <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={3} mb={2}>
