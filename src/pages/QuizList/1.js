@@ -23,7 +23,7 @@ const Img = styled.div`
   width: 20vw;
   height: 52vh;
   margin: 1.5em 0em;
-  background-image: url(${props => props.src});
+  background-image: url(${props => props.src.pic[getRandomInt(2)]});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -62,6 +62,8 @@ const data = (member.data).map((values, index, array) => {
   return values.pic[0]
 })
 
+let ansHistory = []
+
 class NumberList extends React.Component {
   constructor(props) {
     super(props)
@@ -71,10 +73,9 @@ class NumberList extends React.Component {
       answer: 0,
       choice: []
     }
-    this.randomChoice = this.randomChoice.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.randomChoice()
   }
 
@@ -86,7 +87,18 @@ class NumberList extends React.Component {
         choice.push(inRandom)
       }
     }
-    this.setState({answer: choice[getRandomInt(4)], choice: choice})
+
+    let answer = choice[getRandomInt(4)]
+    if (ansHistory.length >= 7) {
+      ansHistory.shift()
+    }
+
+    while (ansHistory.includes(answer)) {
+      answer = choice[getRandomInt(4)]
+    }
+
+    ansHistory.push(answer)
+    this.setState({answer: answer, choice: choice})
   }
 
   answer(choose) {
@@ -95,9 +107,10 @@ class NumberList extends React.Component {
     } else {
       alert('Wrong')
     }
-    this.timeout = setTimeout(() => {
+
+    setTimeout(() => {
       this.randomChoice()
-    }, 100)
+    }, 250)
   }
 
   render() {
@@ -105,7 +118,7 @@ class NumberList extends React.Component {
       <div>
         <Flex>
           <Box m='auto'>
-            <Img src={member.data[this.state.answer].pic[getRandomInt(2)]}alt="Who ?" />
+            <Img src={member.data[this.state.answer]}alt="Who ?" />
           </Box>
         </Flex>
         <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={3} mb={2}>
