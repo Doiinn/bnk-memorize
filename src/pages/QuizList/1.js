@@ -107,6 +107,14 @@ const charPoses = {
 
 let selectPic = getRandomInt(2)
 
+const TimeoutMask = styled.div`
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: ${props => props.timer > 0 ? 'none' : 'block'};
+`
+
 class Question extends React.Component {
   constructor(props) {
     super(props)
@@ -134,9 +142,6 @@ class Question extends React.Component {
       } else {
         this.setState({timer: 0})
         clearInterval(this.timer)
-        setTimeout(() => {
-          alert('Time Out!')
-        }, 350)
       }
     }, 1000)
   }
@@ -182,6 +187,7 @@ class Question extends React.Component {
   render() {
     return (
       <Background color="#FFD7F9">
+        <TimeoutMask timer={this.state.timer}></TimeoutMask>
         <Flex>
           <Box mt={3} ml={3} width={1 / 4}>
             <StyledSquare pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={charPoses}>{this.state.timer.toString()}</SplitText></span></StyledSquare>
