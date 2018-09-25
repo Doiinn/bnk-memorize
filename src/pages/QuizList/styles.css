@@ -5,3 +5,11 @@
     margin-bottom: 17px;
     display: inline-block;
 }
+
+#scoreNum {
+    font-size: 42px;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}

@@ -87,6 +87,15 @@ const StyledSquare = styled(Square)`
   display: inline-block;
 `
 
+const ScoreText = styled(Square)`
+  width: 300px;
+  height: 75px;
+  background: #FF90C3;
+  text-align: center;
+  display: block;
+  float: right;
+`
+
 const charPoses = {
   exit: { opacity: 0, y: 20 },
   enter: {
@@ -107,6 +116,7 @@ class Question extends React.Component {
       answer: 0,
       choice: [],
       timer: 20,
+      score: 0,
       isPicShow: false
     }
     this.tick = this.tick.bind(this)
@@ -126,7 +136,7 @@ class Question extends React.Component {
         clearInterval(this.timer)
         setTimeout(() => {
           alert('Time Out!')
-        }, 250)
+        }, 350)
       }
     }, 1000)
   }
@@ -158,10 +168,8 @@ class Question extends React.Component {
   }
 
   answer(choose) {
-    if (choose === dataName[this.state.answer]) {
-      alert('Correct')
-    } else {
-      alert('Wrong')
+    if (choose === dataName[this.state.answer] && this.state.timer > 0) {
+      this.setState({score: this.state.score + 1})
     }
 
     this.setState({isPicShow: false})
@@ -181,8 +189,8 @@ class Question extends React.Component {
           <Box m='auto' width={2 / 4}>
             <Img src={member.data[this.state.answer].pic[selectPic]}alt="Who ?" pose={this.state.isPicShow ? 'end' : 'start'} />
           </Box>
-          <Box m='auto' width={1 / 4}>
-            <span>Score: </span>
+          <Box mt={3} mr={3} width={1 / 4}>
+            <ScoreText><span id="scoreNum">Score: <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>{this.state.score.toString()}</SplitText></span></ScoreText>
           </Box>
         </Flex>
         <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={3} mb={2}>
