@@ -85,6 +85,12 @@ const StyledSquare = styled(Square)`
   background: #FF90C3;
   text-align: center;
   display: inline-block;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 `
 
 const ScoreText = styled(Square)`
@@ -94,6 +100,12 @@ const ScoreText = styled(Square)`
   text-align: center;
   display: block;
   float: right;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 `
 
 const charPoses = {
@@ -108,11 +120,101 @@ const charPoses = {
 let selectPic = getRandomInt(2)
 
 const TimeoutMask = styled.div`
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.75);
   height: 100vh;
   width: 100vw;
+  z-index: 9999;
   position: fixed;
   display: ${props => props.timer > 0 ? 'none' : 'block'};
+  text-align: center;
+`
+
+const animatedTimeoutTitle = posed.div({
+  start: {
+    scale: 1.2,
+    opacity: 0
+  },
+  end: {
+    scale: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 20,
+      damping: 3,
+      duration: 500
+    },
+    opacity: 1
+  }
+})
+
+const TimeoutTitle = styled(animatedTimeoutTitle)`
+  width: 60%;
+  background-color: #d63c3d;
+  color: #fff;
+  font-size: 42px;
+  margin: 0 auto;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+`
+
+const ResultScore = styled(animatedTimeoutTitle)`
+  width: 60%;
+  background-color: #FF90C3;
+  color: #fff;
+  font-size: 42px;
+  margin: 0 auto;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+`
+const animatedScoreSummary = posed.div({
+  start: {
+    y: -75,
+    scale: 1,
+    opacity: 0,
+    transition: {
+      delay: 250
+    },
+    height: 0
+  },
+  end: {
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 750,
+      ease: 'easeOut',
+      delay: 250
+    },
+    height: 'auto'
+  }
+})
+
+const ScoreSummary = styled(animatedScoreSummary)`
+  width: 60%;
+  background-color: rgba(255,255,255,0.25);
+  outline: 7px;
+  outline-color: #FF90C3;
+  outline-style: solid;
+  color: #fff;
+  font-size: 26px;
+  margin: 1em auto;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+`
+
+const PlayAgainButton = styled(ChoiceButton)`
+
 `
 
 class Question extends React.Component {
@@ -123,16 +225,34 @@ class Question extends React.Component {
     this.state = {
       answer: 0,
       choice: [],
-      timer: 20,
+      timer: 60,
+      correct: 0,
+      wrong: 0,
       score: 0,
       isPicShow: false
     }
     this.tick = this.tick.bind(this)
+    this.resetState = this.resetState.bind(this)
     this.tick()
   }
 
   componentDidMount() {
+    console.log('componentDidMount')
     this.randomChoice()
+  }
+
+  resetState() {
+    this.setState({
+      answer: 0,
+      choice: [],
+      timer: 60,
+      correct: 0,
+      wrong: 0,
+      score: 0,
+      isPicShow: false
+    })
+    this.randomChoice()
+    this.tick()
   }
 
   tick() {
@@ -174,7 +294,10 @@ class Question extends React.Component {
 
   answer(choose) {
     if (choose === dataName[this.state.answer] && this.state.timer > 0) {
+      this.setState({correct: this.state.correct + 1})
       this.setState({score: this.state.score + 1})
+    } else {
+      this.setState({wrong: this.state.wrong + 1})
     }
 
     this.setState({isPicShow: false})
@@ -187,7 +310,21 @@ class Question extends React.Component {
   render() {
     return (
       <Background color="#FFD7F9">
-        <TimeoutMask timer={this.state.timer}></TimeoutMask>
+        <TimeoutMask timer={this.state.timer}>
+          <Flex>
+            <Box m='auto' py={10} width={2 / 4}>
+              <TimeoutTitle pose={this.state.timer > 0 ? 'start' : 'end'}>Time's up</TimeoutTitle>
+              <ResultScore pose={this.state.timer > 0 ? 'start' : 'end'}>Your Score: {this.state.score.toString()}</ResultScore>
+              <ScoreSummary pose={this.state.timer > 0 ? 'start' : 'end'}>
+                <p className="summary-text">Answered: {this.state.correct + this.state.wrong}</p>
+                <p className="summary-text">Correct: {this.state.correct}</p>
+                <p className="summary-text">Wrong: {this.state.wrong}</p>
+                <p className="summary-text">Accurate rate: {((this.state.correct / (this.state.correct + this.state.wrong)) * 100).toFixed(2)}%</p>
+              </ScoreSummary>
+              <PlayAgainButton onClick={this.resetState}>Try Again</PlayAgainButton>
+            </Box>
+          </Flex>
+        </TimeoutMask>
         <Flex>
           <Box mt={3} ml={3} width={1 / 4}>
             <StyledSquare pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={charPoses}>{this.state.timer.toString()}</SplitText></span></StyledSquare>
