@@ -4,110 +4,164 @@
     "data": [
         {
             "name": ["ออม", "Aom"],
+            "fullname": "ปุณยวีร์ จึงเจริญ",
+            "birthdate": "20-09-1995",
             "pic": ["static/pic/bnk-gen2/aom.jpg", "static/pic/bnk-gen2/aom-kimiwa.jpg"]
         },
         {
             "name": ["แบมบู", "Bamboo"],
+            "fullname": "จณิสตา ตันศิริ",
+            "birthdate": "03-09-2002",
             "pic": ["static/pic/bnk-gen2/bamboo.jpg", "static/pic/bnk-gen2/bamboo-kimiwa.jpg"]
         },
         {
             "name": ["เค้ก", "Cake"],
+            "fullname": "นวพร จันทร์สุข",
+            "birthdate": "18-11-1996",
             "pic": ["static/pic/bnk-gen2/cake.jpg", "static/pic/bnk-gen2/cake-kimiwa.jpg"]
         },
         {
             "name": ["ดีนี่", "Deenee"],
+            "fullname": "พิมพ์นิภา ตั้งสกุล",
+            "birthdate": "28-11-2001",
             "pic": ["static/pic/bnk-gen2/deenee.jpg", "static/pic/bnk-gen2/deenee-kimiwa.jpg"]
         },
         {
             "name": ["ฝ้าย", "Faii"],
+            "fullname": "สุมิตรา ดวงแก้ว",
+            "birthdate": "28-06-1996",
             "pic": ["static/pic/bnk-gen2/faii.jpg", "static/pic/bnk-gen2/faii-kimiwa.jpg"]
         },
         {
             "name": ["ฟีฟ่า", "Fifa"],
+            "fullname": "ปวีณ์ธิดา สกุลพิพัฒน์",
+            "birthdate": "06-11-2001",
             "pic": ["static/pic/bnk-gen2/fifa.jpg", "static/pic/bnk-gen2/fifa-kimiwa.jpg"]
         },
         {
             "name": ["ฟ้อนด์", "Fond"],
+            "fullname": "ณัฐทิชา จันทรวารีเลขา",
+            "birthdate": "03-12-2002",
             "pic": ["static/pic/bnk-gen2/fond.jpg", "static/pic/bnk-gen2/fond-kimiwa.jpg"]
         },
         {
             "name": ["จีจี้", "Gygee"],
+            "fullname": "ณัฐกุล พิมพ์ธงชัยกุล",
+            "birthdate": "04-10-2001",
             "pic": ["static/pic/bnk-gen2/gygee.jpg", "static/pic/bnk-gen2/gygee-kimiwa.jpg"]
         },
         {
             "name": ["จูเน่", "Juné"],
+            "fullname": "เพลินพิชญา โกมลารชุน",
+            "birthdate": "04-07-2000",
             "pic": ["static/pic/bnk-gen2/juné.jpg", "static/pic/bnk-gen2/juné-kimiwa.jpg"]
         },
         {
             "name": ["ขมิ้น", "Khamin"],
+            "fullname": "มณิภา รู้ปัญญา",
+            "birthdate": "23-04-1999",
             "pic": ["static/pic/bnk-gen2/khamin.jpg", "static/pic/bnk-gen2/khamin-kimiwa.jpg"]
         },
         {
             "name": ["เข่ง", "Kheng"],
+            "fullname": "จุฑามาศ คลทา",
+            "birthdate": "26-03-2000",
             "pic": ["static/pic/bnk-gen2/kheng.jpg", "static/pic/bnk-gen2/kheng-kimiwa.jpg"]
         },
         {
             "name": ["มัยร่า", "Maira"],
+            "fullname": "มะอิระ คูยามา",
+            "birthdate": "24-02-1997",
             "pic": ["static/pic/bnk-gen2/maira.jpg", "static/pic/bnk-gen2/maira-kimiwa.jpg"]
         },
         {
             "name": ["มิวนิค", "Mewnich"],
+            "fullname": "นันท์นภัส เลิศนามเชิดสกุล",
+            "birthdate": "11-03-2002",
             "pic": ["static/pic/bnk-gen2/mewnich.jpg", "static/pic/bnk-gen2/mewnich-kimiwa.jpg"]
         },
         {
             "name": ["มินมิน", "Minmin"],
+            "fullname": "รชยา ทัพพ์คุณานนต์",
+            "birthdate": "20-03-1997",
             "pic": ["static/pic/bnk-gen2/minmin.jpg", "static/pic/bnk-gen2/minmin-kimiwa.jpg"]
         },
         {
             "name": ["มายยู", "Myyu"],
+            "fullname": "กวิสรา สิงห์ปลอด",
+            "birthdate": "28-10-1999",
             "pic": ["static/pic/bnk-gen2/myyu.jpg", "static/pic/bnk-gen2/myyu-kimiwa.jpg"]
         },
         {
             "name": ["แนทเธอรีน", "Natherine"],
+            "fullname": "ดุสิตา กิติสาระกุลชัย",
+            "birthdate": "11-11-1999",
             "pic": ["static/pic/bnk-gen2/natherine.jpg", "static/pic/bnk-gen2/natherine-kimiwa.jpg"]
         },
         {
             "name": ["นิว", "New"],
+            "fullname": "ชัญญาภัค นุ่มประสพ",
+            "birthdate": "02-01-2003",
             "pic": ["static/pic/bnk-gen2/new.jpg", "static/pic/bnk-gen2/new-kimiwa.jpg"]
         },
         {
             "name": ["นิกี้", "Niky"],
+            "fullname": "วรินท์รัตน์ ยลประสงค์",
+            "birthdate": "26-01-2005",
             "pic": ["static/pic/bnk-gen2/niky.jpg", "static/pic/bnk-gen2/niky-kimiwa.jpg"]
         },
         {
             "name": ["นายน์", "Nine"],
+            "fullname": "ภัทรนรินทร์ เหมือนฤทธิ์",
+            "birthdate": "11-11-2000",
             "pic": ["static/pic/bnk-gen2/nine.jpg", "static/pic/bnk-gen2/nine-kimiwa.jpg"]
         },
         {
             "name": ["อุ้ม", "Oom"],
+            "fullname": "ณัชชา กฤษฎาสิมะ",
+            "birthdate": "29-09-2002",
             "pic": ["static/pic/bnk-gen2/oom.jpg", "static/pic/bnk-gen2/oom-kimiwa.jpg"]
         },
         {
             "name": ["พาขวัญ", "Pakwan"],
+            "fullname": "พาขวัญ น้อยใจบุญ",
+            "birthdate": "18-02-2000",
             "pic": ["static/pic/bnk-gen2/pakwan.jpg", "static/pic/bnk-gen2/pakwan-kimiwa.jpg"]
         },
         {
             "name": ["แพนด้า", "Panda"],
+            "fullname": "จิดาภา แช่มช้อย",
+            "birthdate": "10-10-1997",
             "pic": ["static/pic/bnk-gen2/panda.jpg", "static/pic/bnk-gen2/panda-kimiwa.jpg"]
         },
         {
             "name": ["ผักขม", "Phukkhom"],
+            "fullname": "สิริการย์ ชินวัชร์สุวรรณ",
+            "birthdate": "28-02-1998",
             "pic": ["static/pic/bnk-gen2/phukkhom.jpg", "static/pic/bnk-gen2/phukkhom-kimiwa.jpg"]
         },
         {
             "name": ["รตา", "Ratah"],
+            "fullname": "รตา ชินกระจ่างกิจ",
+            "birthdate": "27-03-2002",
             "pic": ["static/pic/bnk-gen2/ratah.jpg", "static/pic/bnk-gen2/ratah-kimiwa.jpg"]
         },
         {
             "name": ["สตางค์", "Stang"],
+            "fullname": "ตริษา ปรีชาตั้งกิจ",
+            "birthdate": "22-10-2003",
             "pic": ["static/pic/bnk-gen2/stang.jpg", "static/pic/bnk-gen2/stang-kimiwa.jpg"]
         },
         {
             "name": ["วิว", "View"],
+            "fullname": "กมนธิดา โรจน์ทวีนิธิ",
+            "birthdate": "28-05-2004",
             "pic": ["static/pic/bnk-gen2/view.jpg", "static/pic/bnk-gen2/view-kimiwa.jpg"]
         },
         {
             "name": ["วี", "Wee"],
+            "fullname": "วีรยา จาง",
+            "birthdate": "23-10-2001",
             "pic": ["static/pic/bnk-gen2/wee.jpg", "static/pic/bnk-gen2/wee-kimiwa.jpg"]
         }
     ]
