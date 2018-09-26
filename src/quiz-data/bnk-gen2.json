@@ -3,111 +3,111 @@
     "quizname": "รู้ไหม ใครเอ่ย ?",
     "data": [
         {
-            "name": "Aom",
+            "name": ["ออม", "Aom"],
             "pic": ["static/pic/bnk-gen2/aom.jpg", "static/pic/bnk-gen2/aom-kimiwa.jpg"]
         },
         {
-            "name": "Bamboo",
+            "name": ["แบมบู", "Bamboo"],
             "pic": ["static/pic/bnk-gen2/bamboo.jpg", "static/pic/bnk-gen2/bamboo-kimiwa.jpg"]
         },
         {
-            "name": "Cake",
+            "name": ["เค้ก", "Cake"],
             "pic": ["static/pic/bnk-gen2/cake.jpg", "static/pic/bnk-gen2/cake-kimiwa.jpg"]
         },
         {
-            "name": "Deenee",
+            "name": ["ดีนี่", "Deenee"],
             "pic": ["static/pic/bnk-gen2/deenee.jpg", "static/pic/bnk-gen2/deenee-kimiwa.jpg"]
         },
         {
-            "name": "Faii",
+            "name": ["ฝ้าย", "Faii"],
             "pic": ["static/pic/bnk-gen2/faii.jpg", "static/pic/bnk-gen2/faii-kimiwa.jpg"]
         },
         {
-            "name": "Fifa",
+            "name": ["ฟีฟ่า", "Fifa"],
             "pic": ["static/pic/bnk-gen2/fifa.jpg", "static/pic/bnk-gen2/fifa-kimiwa.jpg"]
         },
         {
-            "name": "Fond",
+            "name": ["ฟ้อนด์", "Fond"],
             "pic": ["static/pic/bnk-gen2/fond.jpg", "static/pic/bnk-gen2/fond-kimiwa.jpg"]
         },
         {
-            "name": "Gygee",
+            "name": ["จีจี้", "Gygee"],
             "pic": ["static/pic/bnk-gen2/gygee.jpg", "static/pic/bnk-gen2/gygee-kimiwa.jpg"]
         },
         {
-            "name": "Juné",
+            "name": ["จูเน่", "Juné"],
             "pic": ["static/pic/bnk-gen2/juné.jpg", "static/pic/bnk-gen2/juné-kimiwa.jpg"]
         },
         {
-            "name": "Khamin",
+            "name": ["ขมิ้น", "Khamin"],
             "pic": ["static/pic/bnk-gen2/khamin.jpg", "static/pic/bnk-gen2/khamin-kimiwa.jpg"]
         },
         {
-            "name": "Kheng",
+            "name": ["เข่ง", "Kheng"],
             "pic": ["static/pic/bnk-gen2/kheng.jpg", "static/pic/bnk-gen2/kheng-kimiwa.jpg"]
         },
         {
-            "name": "Maira",
+            "name": ["มัยร่า", "Maira"],
             "pic": ["static/pic/bnk-gen2/maira.jpg", "static/pic/bnk-gen2/maira-kimiwa.jpg"]
         },
         {
-            "name": "Mewnich",
+            "name": ["มิวนิค", "Mewnich"],
             "pic": ["static/pic/bnk-gen2/mewnich.jpg", "static/pic/bnk-gen2/mewnich-kimiwa.jpg"]
         },
         {
-            "name": "Minmin",
+            "name": ["มินมิน", "Minmin"],
             "pic": ["static/pic/bnk-gen2/minmin.jpg", "static/pic/bnk-gen2/minmin-kimiwa.jpg"]
         },
         {
-            "name": "Myyu",
+            "name": ["มายยู", "Myyu"],
             "pic": ["static/pic/bnk-gen2/myyu.jpg", "static/pic/bnk-gen2/myyu-kimiwa.jpg"]
         },
         {
-            "name": "Natherine",
+            "name": ["แนทเธอรีน", "Natherine"],
             "pic": ["static/pic/bnk-gen2/natherine.jpg", "static/pic/bnk-gen2/natherine-kimiwa.jpg"]
         },
         {
-            "name": "New",
+            "name": ["นิว", "New"],
             "pic": ["static/pic/bnk-gen2/new.jpg", "static/pic/bnk-gen2/new-kimiwa.jpg"]
         },
         {
-            "name": "Niky",
+            "name": ["นิกี้", "Niky"],
             "pic": ["static/pic/bnk-gen2/niky.jpg", "static/pic/bnk-gen2/niky-kimiwa.jpg"]
         },
         {
-            "name": "Nine",
+            "name": ["นายน์", "Nine"],
             "pic": ["static/pic/bnk-gen2/nine.jpg", "static/pic/bnk-gen2/nine-kimiwa.jpg"]
         },
         {
-            "name": "Oom",
+            "name": ["อุ้ม", "Oom"],
             "pic": ["static/pic/bnk-gen2/oom.jpg", "static/pic/bnk-gen2/oom-kimiwa.jpg"]
         },
         {
-            "name": "Pakwan",
+            "name": ["พาขวัญ", "Pakwan"],
             "pic": ["static/pic/bnk-gen2/pakwan.jpg", "static/pic/bnk-gen2/pakwan-kimiwa.jpg"]
         },
         {
-            "name": "Panda",
+            "name": ["แพนด้า", "Panda"],
             "pic": ["static/pic/bnk-gen2/panda.jpg", "static/pic/bnk-gen2/panda-kimiwa.jpg"]
         },
         {
-            "name": "Phukkhom",
+            "name": ["ผักขม", "Phukkhom"],
             "pic": ["static/pic/bnk-gen2/phukkhom.jpg", "static/pic/bnk-gen2/phukkhom-kimiwa.jpg"]
         },
         {
-            "name": "Ratah",
+            "name": ["รตา", "Ratah"],
             "pic": ["static/pic/bnk-gen2/ratah.jpg", "static/pic/bnk-gen2/ratah-kimiwa.jpg"]
         },
         {
-            "name": "Stang",
+            "name": ["สตางค์", "Stang"],
             "pic": ["static/pic/bnk-gen2/stang.jpg", "static/pic/bnk-gen2/stang-kimiwa.jpg"]
         },
         {
-            "name": "View",
+            "name": ["วิว", "View"],
             "pic": ["static/pic/bnk-gen2/view.jpg", "static/pic/bnk-gen2/view-kimiwa.jpg"]
         },
         {
-            "name": "Wee",
+            "name": ["วี", "Wee"],
             "pic": ["static/pic/bnk-gen2/wee.jpg", "static/pic/bnk-gen2/wee-kimiwa.jpg"]
         }
     ]

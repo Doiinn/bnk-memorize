@@ -12,7 +12,7 @@ const getRandomInt = (max) => {
 }
 
 const dataName = (member.data).map((values, index, array) => {
-  return values.name
+  return values.name[0]
 })
 
 const animatedImg = posed.div({
