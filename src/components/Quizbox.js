@@ -6,13 +6,15 @@ export const QuizBox = ({quizname, quizpic}) => {
   const QbCover = styled.div`
     width: 100%;
     height: 100%;
+    margin: 0;
     background-image: linear-gradient(rgba(255, 153, 195, 0.5), rgba(0, 0, 0, 0.25)), url(${quizpic});
-    background-size: contain;
+    background-size: 50%;
     background-position: center;
+    position: relative;
     transition: all 0.5s ease;
 
     &:hover {
-      transform: scale(1.2);
+      background-size: 55%;
     }
   `
 
@@ -26,25 +28,24 @@ export const QuizBox = ({quizname, quizpic}) => {
     cursor: pointer;
   `
 
-  const Quizname = styled.h2`
-    height: 0px;
+  const Quizname = styled.span`
+    width: 100%;
     font-size: 36px;
     font-weight: 500;
-    position: relative;
-    right: 25px;
-    bottom: 100px;
-    margin: 0 auto;
     color: white;
     text-shadow: 1px 1px 2px black;
-    cursor: pointer;
-    user-select: none;
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    margin: 0 auto;
   `
 
   return (
     <Flex flexWrap='wrap' alignItems='center' m={2}>
       <Quizbox width={1 / 1.75} m='auto'>
-        <QbCover></QbCover>
-        <Quizname>{quizname}</Quizname>
+        <QbCover>
+          <Quizname>{quizname}</Quizname>
+        </QbCover>
       </Quizbox>
     </Flex>
   )

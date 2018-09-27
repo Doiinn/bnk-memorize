@@ -274,7 +274,7 @@ const PlayAgainButton = styled(animatedButton)`
   }
 `
 const BackToQuizButton = styled(animatedButton2)`
-  width: 250px;
+  width: '250px';
   margin-top: 1.5em;
   margin-left: auto;
   margin-right: auto;
@@ -300,7 +300,8 @@ const BackToQuizButton = styled(animatedButton2)`
 `
 
 const removeUnderline = {
-  textDecoration: 'none'
+  textDecoration: 'none',
+  display: 'inline-block'
 }
 
 class Question extends React.Component {
@@ -311,12 +312,13 @@ class Question extends React.Component {
     this.state = {
       answer: 0,
       choice: [],
-      timer: 5,
+      timer: 10,
       correct: 0,
       wrong: 0,
       score: 0,
       isPicShow: false
     }
+    this.baseState = this.state
     this.tick = this.tick.bind(this)
     this.resetState = this.resetState.bind(this)
     this.tick()
@@ -328,15 +330,7 @@ class Question extends React.Component {
   }
 
   resetState() {
-    this.setState({
-      answer: 0,
-      choice: [],
-      timer: 5,
-      correct: 0,
-      wrong: 0,
-      score: 0,
-      isPicShow: false
-    })
+    this.setState(this.baseState)
     this.randomChoice()
     this.tick()
   }
