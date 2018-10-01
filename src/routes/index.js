@@ -5,8 +5,7 @@ import Quiz from '../pages/Quiz'
 import Stat from '../pages/Stat'
 import About from '../pages/About'
 import WhoIsShe from '../pages/QuizList/WhoIsShe'
-import bnkgen1 from '../quiz-data/bnk-gen1.json'
-// import bnkgen2 from '../quiz-data/bnk-gen2.json'
+import bnkgen1 from '../quiz-data/bnk-gen1'
 import bnkgen2 from '../quiz-data/bnk-gen2'
 
 export default () => (
