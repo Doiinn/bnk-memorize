@@ -3,14 +3,29 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
-import { HashRouter } from 'react-router-dom'
+import rootReducer from './reducers'
+import { Provider } from 'react-redux'
+import { createBrowserHistory } from 'history'
+import { applyMiddleware, compose, createStore } from 'redux'
+import { connectRouter, routerMiddleware } from 'connected-react-router'
 
-const AppWithRouter = () => (
-  <HashRouter>
-    <App />
-  </HashRouter>
+const history = createBrowserHistory()
+const store = createStore(
+  connectRouter(history)(rootReducer),
+  compose(
+    applyMiddleware(routerMiddleware(history)
+    )
+  )
 )
 
-ReactDOM.render(<AppWithRouter />, document.getElementById('root'))
-// ReactDOM.render(<App />, document.getElementById('root'))
+const render = () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App history={history} />
+    </Provider>,
+    document.getElementById('root')
+  )
+}
+
+render()
 registerServiceWorker()

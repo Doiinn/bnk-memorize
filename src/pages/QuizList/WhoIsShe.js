@@ -1,5 +1,6 @@
 import React from 'react'
 import { Background } from '../../components/Background'
+import { Gap } from '../../components/Gap'
 import { Timer, animatedConfig } from '../../components/Timer'
 import { QuizImage } from '../../components/QuizImage'
 import { ChoiceButton } from '../../components/ChoiceButton'
@@ -48,7 +49,7 @@ class Question extends React.Component {
     this.state = {
       answer: 0,
       choice: [],
-      timer: 10,
+      timer: 60,
       correct: 0,
       wrong: 0,
       score: 0,
@@ -57,7 +58,7 @@ class Question extends React.Component {
     this.baseState = this.state
     this.tick = this.tick.bind(this)
     this.resetState = this.resetState.bind(this)
-    this.tick()
+    //this.tick()
     console.log(testPic)
   }
 
@@ -135,6 +136,7 @@ class Question extends React.Component {
   render() {
     return (
       <Background color="#FFD7F9">
+        <Gap />
         <TimeoutMask timer={this.state.timer}>
           <Flex>
             <Box m='auto' py={10} width={2 / 4}>
