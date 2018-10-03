@@ -4,11 +4,21 @@ import { sidenavmenu } from './actions'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Flex, Box } from 'grid-styled'
+import posed from 'react-pose'
 import Router from './routes'
 import './index.css'
 import { ConnectedRouter } from 'connected-react-router'
 
-const Header = styled.nav`
+const animatedNav = posed.nav({
+  start: {
+    marginLeft: 0
+  },
+  end: {
+    marginLeft: '225px'
+  }
+})
+
+const Header = styled(animatedNav)`
   width: 100vw;
   height: 72px;
   background-color: #E5AADC;
@@ -28,7 +38,16 @@ const Header = styled.nav`
   }
 `
 
-const Sidenav = styled.div`
+const animated = posed.div({
+  start: {
+    marginLeft: 0
+  },
+  end: {
+    marginLeft: '225px'
+  }
+})
+
+const Sidenav = styled(animated)`
   width: 225px;
   min-height: 100vh;
   background-color: #ffe3fb;
@@ -110,7 +129,7 @@ const App = ({history, sidenavStatus, dispatch}) => {
             <NavLink to="/about" activeClassName="is-active" style={removeUnderline}><ButtonSideMenu>เกี่ยวกับ</ButtonSideMenu></NavLink>
           </Box>
         </Sidenav>
-        <Header marginLeft={sidenavStatus}>
+        <Header marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'start' : 'end'}>
           <Flex flexWrap='wrap' alignItems='center'>
             <Box p={2} width={[1, 1, 1 / 3]}>
               <i className="material-icons" id="mobile-menu" onClick={() => dispatch(sidenavmenu())}>menu</i>

@@ -1,6 +1,16 @@
 import styled from 'styled-components'
+import posed from 'react-pose'
 
-export const Background = styled.div`
+const animated = posed.div({
+  start: {
+    marginLeft: 0
+  },
+  end: {
+    marginLeft: '225px'
+  }
+})
+
+export const Background = styled(animated)`
   width: 100vw;
   min-height: 100%;
   /* min-height: 100vh; */

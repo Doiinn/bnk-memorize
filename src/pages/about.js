@@ -4,7 +4,7 @@ import { Background } from '../components/Background'
 import { Gap } from '../components/Gap'
 
 const About = ({ sidenavStatus }) => (
-  <Background color="#D7FFFF" marginLeft={sidenavStatus}>
+  <Background color="#D7FFFF" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'start' : 'end'}>
     <Gap />
     <h1>About</h1>
   </Background>
