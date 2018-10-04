@@ -38,11 +38,14 @@ export const QuizBox = ({quizname, quizpic}) => {
     right: 20px;
     bottom: 50px;
     margin: 0 auto;
+    @media (max-width: 831.98px) {
+      font-size: 1.5em;
+    }
   `
 
   return (
-    <Flex flexWrap='wrap' alignItems='center' m={2}>
-      <Quizbox width={1 / 1.75} m='auto'>
+    <Flex flexWrap='wrap' alignItems='center' m={[3, 3, 2]}>
+      <Quizbox width={[1 / 1.05, 1 / 1.25,  1 / 1.75]} m='auto'>
         <QbCover>
           <Quizname>{quizname}</Quizname>
         </QbCover>
