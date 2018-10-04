@@ -49,9 +49,9 @@ const animated = posed.div({
 
 const Sidenav = styled(animated)`
   width: 225px;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #ffe3fb;
-  position: fixed;
+  position: absolute;
 `
 
 const Label = styled.h1`
@@ -116,18 +116,20 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
     <ConnectedRouter history={history}>
       <React.Fragment>
         <Sidenav>
-          <Box p={2} width={1} m='auto'>
-            <NavLink exact to="/" style={removeUnderline}><ButtonSideMenu path='/'>หน้าแรก</ButtonSideMenu></NavLink>
-          </Box>
-          <Box p={2} width={1} m='auto'>
-            <NavLink to="/quiz" style={removeUnderline}><ButtonSideMenu path='/quiz'>คำถาม</ButtonSideMenu></NavLink>
-          </Box>
-          <Box p={2} width={1} m='auto'>
-            <NavLink to="/stat" style={removeUnderline}><ButtonSideMenu path='/stat'>สถิติ</ButtonSideMenu></NavLink>
-          </Box>
-          <Box p={2} width={1} m='auto'>
-            <NavLink to="/about" style={removeUnderline}><ButtonSideMenu path='/about'>เกี่ยวกับ</ButtonSideMenu></NavLink>
-          </Box>
+          <Flex flexWrap='wrap' alignItems='center'>
+            <Box p={2} width={1} m='auto'>
+              <NavLink exact to="/" style={removeUnderline}><ButtonSideMenu path='/'>หน้าแรก</ButtonSideMenu></NavLink>
+            </Box>
+            <Box p={2} width={1} m='auto'>
+              <NavLink to="/quiz" style={removeUnderline}><ButtonSideMenu path='/quiz'>คำถาม</ButtonSideMenu></NavLink>
+            </Box>
+            <Box p={2} width={1} m='auto'>
+              <NavLink to="/stat" style={removeUnderline}><ButtonSideMenu path='/stat'>สถิติ</ButtonSideMenu></NavLink>
+            </Box>
+            <Box p={2} width={1} m='auto'>
+              <NavLink to="/about" style={removeUnderline}><ButtonSideMenu path='/about'>เกี่ยวกับ</ButtonSideMenu></NavLink>
+            </Box>
+          </Flex>
         </Sidenav>
         <Header marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'start' : 'end'}>
           <Flex flexWrap='wrap' alignItems='center'>
