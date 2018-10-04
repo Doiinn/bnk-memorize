@@ -52,6 +52,11 @@ const Sidenav = styled(animated)`
   height: 100vh;
   background-color: #ffe3fb;
   position: absolute;
+
+  @media (min-width: 831.98px) {
+    display: none;
+  }
+}
 `
 
 const Label = styled.h1`
@@ -76,6 +81,8 @@ const removeUnderline = {
 }
 
 const App = ({history, sidenavStatus, thislocation, dispatch}) => {
+
+  window.addEventListener('resize', console.log(window.innerWidth))
 
   const ButtonMenu = styled.div`
     color: ${props => props.path === thislocation ? 'white' : 'black'};
@@ -118,16 +125,16 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
         <Sidenav>
           <Flex flexWrap='wrap' alignItems='center'>
             <Box p={2} width={1} m='auto'>
-              <NavLink exact to="/" style={removeUnderline}><ButtonSideMenu path='/'>หน้าแรก</ButtonSideMenu></NavLink>
+              <ButtonSideMenu path='/' onClick={() => { dispatch(sidenavmenu()); history.push('/') }}>หน้าแรก</ButtonSideMenu>
             </Box>
             <Box p={2} width={1} m='auto'>
-              <NavLink to="/quiz" style={removeUnderline}><ButtonSideMenu path='/quiz'>คำถาม</ButtonSideMenu></NavLink>
+              <ButtonSideMenu path='/quiz' onClick={() => { dispatch(sidenavmenu()); history.push('/quiz') }}>คำถาม</ButtonSideMenu>
             </Box>
             <Box p={2} width={1} m='auto'>
-              <NavLink to="/stat" style={removeUnderline}><ButtonSideMenu path='/stat'>สถิติ</ButtonSideMenu></NavLink>
+              <ButtonSideMenu path='/stat' onClick={() => { dispatch(sidenavmenu()); history.push('/stat') }}>สถิติ</ButtonSideMenu>
             </Box>
             <Box p={2} width={1} m='auto'>
-              <NavLink to="/about" style={removeUnderline}><ButtonSideMenu path='/about'>เกี่ยวกับ</ButtonSideMenu></NavLink>
+              <ButtonSideMenu path='/about' onClick={() => { dispatch(sidenavmenu()); history.push('/about') }}>เกี่ยวกับ</ButtonSideMenu>
             </Box>
           </Flex>
         </Sidenav>
