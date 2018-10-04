@@ -16,6 +16,13 @@ export const QuizBox = ({quizname, quizpic}) => {
     &:hover {
       background-size: 55%;
     }
+
+    @media (max-width: 831.98px) {
+      background-size: 75%;
+        &:hover {
+          background-size: 82.5%;
+      }
+    }
   `
 
   const Quizbox = styled(Box)`
