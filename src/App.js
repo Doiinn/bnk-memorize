@@ -71,62 +71,62 @@ const Label = styled.h1`
   }
 `
 
-const ButtonMenu = styled.div`
-  color: black;
-  background-color: white;
-  text-align: center;
-  cursor: pointer;
-  padding: 5px;
-  outline: 3px;
-  outline-color: #FF90C3;
-  outline-style: solid;
-  :hover {
-    background-color: #FF99C3;
-    color: white;
-  }
-  @media (max-width: 831.98px) {
-    display: none;
-  }
-`
-
-const ButtonSideMenu = styled.div`
-  color: black;
-  background-color: white;
-  text-align: center;
-  cursor: pointer;
-  padding: 5px;
-  outline: 3px;
-  outline-color: #FF90C3;
-  outline-style: solid;
-  :hover {
-    background-color: #FF99C3;
-    color: white;
-  }
-  @media (min-width: 831.98px) {
-    display: none;
-  }
-`
-
 const removeUnderline = {
   textDecoration: 'none'
 }
 
-const App = ({history, sidenavStatus, dispatch}) => {
+const App = ({history, sidenavStatus, thislocation, dispatch}) => {
+
+  const ButtonMenu = styled.div`
+    color: ${props => props.path === thislocation ? 'white' : 'black'};
+    background-color: ${props => props.path === thislocation ? ' #FF99C3' : 'white'};
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    outline: 3px;
+    outline-color: #FF90C3;
+    outline-style: solid;
+    :hover {
+      background-color: #FF99C3;
+      color: white;
+    }
+    @media (max-width: 831.98px) {
+      display: none;
+    }
+`
+  const ButtonSideMenu = styled.div`
+    color: ${props => props.path === thislocation ? 'white' : 'black'};
+    background-color: ${props => props.path === thislocation ? ' #FF99C3' : 'white'};
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    outline: 3px;
+    outline-color: #FF90C3;
+    outline-style: solid;
+    :hover {
+      background-color: #FF99C3;
+      color: white;
+    }
+    @media (min-width: 831.98px) {
+      display: none;
+    }
+  `
+
   return (
     <ConnectedRouter history={history}>
       <React.Fragment>
         <Sidenav>
           <Box p={2} width={1} m='auto'>
-            <NavLink exact to="/" activeClassName="is-active" style={removeUnderline}><ButtonSideMenu>หน้าแรก</ButtonSideMenu></NavLink>
+            <NavLink exact to="/" style={removeUnderline}><ButtonSideMenu path='/'>หน้าแรก</ButtonSideMenu></NavLink>
           </Box>
           <Box p={2} width={1} m='auto'>
-            <NavLink to="/quiz" activeClassName="is-active" style={removeUnderline}><ButtonSideMenu>คำถาม</ButtonSideMenu></NavLink>
+            <NavLink to="/quiz" style={removeUnderline}><ButtonSideMenu path='/quiz'>คำถาม</ButtonSideMenu></NavLink>
           </Box>
           <Box p={2} width={1} m='auto'>
-            <NavLink to="/stat" activeClassName="is-active" style={removeUnderline}><ButtonSideMenu>สถิติ</ButtonSideMenu></NavLink>
+            <NavLink to="/stat" style={removeUnderline}><ButtonSideMenu path='/stat'>สถิติ</ButtonSideMenu></NavLink>
           </Box>
           <Box p={2} width={1} m='auto'>
-            <NavLink to="/about" activeClassName="is-active" style={removeUnderline}><ButtonSideMenu>เกี่ยวกับ</ButtonSideMenu></NavLink>
+            <NavLink to="/about" style={removeUnderline}><ButtonSideMenu path='/about'>เกี่ยวกับ</ButtonSideMenu></NavLink>
           </Box>
         </Sidenav>
         <Header marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'start' : 'end'}>
@@ -136,16 +136,16 @@ const App = ({history, sidenavStatus, dispatch}) => {
               <Label>BNK MEMORIZE</Label>
             </Box>
             <Box p={2} width={[0, 0, 1 / 8]} m='auto'>
-              <NavLink exact to="/" activeClassName="is-active" style={removeUnderline}><ButtonMenu>หน้าแรก</ButtonMenu></NavLink>
+              <NavLink exact to="/" style={removeUnderline}><ButtonMenu path='/'>หน้าแรก</ButtonMenu></NavLink>
             </Box>
             <Box p={2} width={[0, 0, 1 / 8]} m='auto'>
-              <NavLink to="/quiz" activeClassName="is-active" style={removeUnderline}><ButtonMenu>คำถาม</ButtonMenu></NavLink>
+              <NavLink to="/quiz" style={removeUnderline}><ButtonMenu path='/quiz'>คำถาม</ButtonMenu></NavLink>
             </Box>
             <Box p={2} width={[0, 0, 1 / 8]} m='auto'>
-              <NavLink to="/stat" activeClassName="is-active" style={removeUnderline}><ButtonMenu>สถิติ</ButtonMenu></NavLink>
+              <NavLink to="/stat" style={removeUnderline}><ButtonMenu path='/stat'>สถิติ</ButtonMenu></NavLink>
             </Box>
             <Box p={2} width={[0, 0, 1 / 8]} m='auto'>
-              <NavLink to="/about" activeClassName="is-active" style={removeUnderline}><ButtonMenu>เกี่ยวกับ</ButtonMenu></NavLink>
+              <NavLink to="/about" style={removeUnderline}><ButtonMenu path='/about'>เกี่ยวกับ</ButtonMenu></NavLink>
             </Box>
           </Flex>
         </Header>
@@ -157,7 +157,8 @@ const App = ({history, sidenavStatus, dispatch}) => {
 
 const mapStateToProps = state => ({
   message: 'This is message from mapStateToProps',
-  sidenavStatus: state.sidenavstatus || false
+  sidenavStatus: state.sidenavstatus || false,
+  thislocation: state.thislocation || '/'
 })
 
 const AppWithConnect = connect(mapStateToProps)(App)

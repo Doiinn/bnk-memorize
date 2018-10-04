@@ -4,13 +4,16 @@ import { Background } from '../components/Background'
 import { Gap } from '../components/Gap'
 import { QuizBox } from '../components/Quizbox'
 import { NavLink } from 'react-router-dom'
+import { updateLocation } from '../actions'
 import picGen1 from '../statics/pics/bnk48/gen1/all-members.jpg'
 import picGen2 from '../statics/pics/bnk48/gen2/small/all-members.jpg'
 
-const Quiz = ({ sidenavStatus }) => {
+const Quiz = ({ location, sidenavStatus, dispatch }) => {
   const removeUnderline = {
     textDecoration: 'none'
   }
+
+  dispatch(updateLocation(location.pathname))
 
   return (
     <Background color="#FFD7F9" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'start' : 'end'}>
@@ -23,7 +26,8 @@ const Quiz = ({ sidenavStatus }) => {
 
 const mapStateToProps = state => ({
   message: 'This is message from mapStateToProps',
-  sidenavStatus: state.sidenavstatus || false
+  sidenavStatus: state.sidenavstatus || false,
+  thislocation: state.thislocation || '/'
 })
 
 const AppWithConnect = connect(mapStateToProps)(Quiz)

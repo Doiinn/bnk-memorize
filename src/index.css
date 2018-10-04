@@ -10,11 +10,6 @@ body {
   height: 100vh;
 }
 
-.is-active > div {
-  background-color: #FF99C3;
-  color: white;
-}
-
 #mobile-menu {
   font-size: 56px;
   position: absolute;

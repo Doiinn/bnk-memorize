@@ -11,3 +11,8 @@ export const decrement = (score = -1) => ({
 export const sidenavmenu = () => ({
   type: 'CLICK'
 })
+
+export const updateLocation = (location) => ({
+  type: 'UPDATE',
+  location
+})

@@ -15,7 +15,6 @@ import { Flex, Box } from 'grid-styled'
 import SplitText from 'react-pose-text'
 import './styles.css'
 import { Link } from 'react-router-dom'
-import testPic from '../../statics/pics/bnk48/gen1/cherprang.jpg'
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max))
@@ -59,7 +58,6 @@ class Question extends React.Component {
     this.tick = this.tick.bind(this)
     this.resetState = this.resetState.bind(this)
     //this.tick()
-    console.log(testPic)
   }
 
   componentDidMount() {
