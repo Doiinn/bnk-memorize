@@ -2,9 +2,11 @@ import React from 'react'
 import { Background } from '../../components/Background'
 import { Gap } from '../../components/Gap'
 import { Timer, animatedConfig } from '../../components/Timer'
+import { MiniTimer } from '../../components/MiniTimer'
 import { QuizImage } from '../../components/QuizImage'
 import { ChoiceButton } from '../../components/ChoiceButton'
 import { ScoreLabel } from '../../components/ScoreLabel'
+import { MiniScoreLabel } from '../../components/MiniScoreLabel'
 import { TimeoutLabel } from '../../components/TimeoutLabel'
 import { ResultScoreLabel } from '../../components/ResultScoreLabel'
 import { TimeoutMask } from '../../components/TimeoutMask'
@@ -57,7 +59,7 @@ class Question extends React.Component {
     this.baseState = this.state
     this.tick = this.tick.bind(this)
     this.resetState = this.resetState.bind(this)
-    //this.tick()
+    this.tick()
   }
 
   componentDidMount() {
@@ -156,13 +158,17 @@ class Question extends React.Component {
             <Timer pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.timer.toString()}</SplitText></span></Timer>
           </Box>
           <Box m='auto' width={[1, 1, 2 / 4]}>
+            <Box m='auto' mt={3} width={[68 / 100, 68 / 100, 0]}>
+              <MiniTimer pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.timer.toString()}</SplitText></span></MiniTimer>
+              <MiniScoreLabel width='150px' height='60px' background='#FF90C3'><span id="scoreNum">Score: <SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.score.toString()}</SplitText></span></MiniScoreLabel>
+            </Box>
             <QuizImage src={this.memberSet.data[this.state.answer].pic[selectPic]}alt="Who ?" pose={this.state.isPicShow ? 'end' : 'start'} />
           </Box>
           <Box mt={3} mr={3} width={[0, 0, 1 / 4]}>
             <ScoreLabel width='300px' height='75px' background='#FF90C3'><span id="scoreNum">Score: <SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.score.toString()}</SplitText></span></ScoreLabel>
           </Box>
         </Flex>
-        <Flex flexWrap='wrap' alignItems='center' mx={[0, 0, '14em']} mt={3} mb={2}>
+        <Flex flexWrap='wrap' alignItems='center' mx={[0, 0, '14em']} mt={[2, 2, 3]} mb={2}>
           <Box width={[2 / 5, 2 / 5, 1 / 4]} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, this.dataName[this.state.choice[0]])}>{this.dataName[this.state.choice[0]]}</ChoiceButton>
           </Box>
