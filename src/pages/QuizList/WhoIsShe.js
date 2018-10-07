@@ -152,29 +152,29 @@ class Question extends React.Component {
           </Flex>
         </TimeoutMask>
         <Flex>
-          <Box mt={3} ml={3} width={1 / 4}>
+          <Box mt={3} ml={3} width={[0, 0, 1 / 4]}>
             <Timer pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.timer.toString()}</SplitText></span></Timer>
           </Box>
-          <Box m='auto' width={2 / 4}>
+          <Box m='auto' width={[1, 1, 2 / 4]}>
             <QuizImage src={this.memberSet.data[this.state.answer].pic[selectPic]}alt="Who ?" pose={this.state.isPicShow ? 'end' : 'start'} />
           </Box>
-          <Box mt={3} mr={3} width={1 / 4}>
+          <Box mt={3} mr={3} width={[0, 0, 1 / 4]}>
             <ScoreLabel width='300px' height='75px' background='#FF90C3'><span id="scoreNum">Score: <SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.score.toString()}</SplitText></span></ScoreLabel>
           </Box>
         </Flex>
-        <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={3} mb={2}>
-          <Box width={1 / 4} m='auto'>
+        <Flex flexWrap='wrap' alignItems='center' mx={[0, 0, '14em']} mt={3} mb={2}>
+          <Box width={[2 / 5, 2 / 5, 1 / 4]} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, this.dataName[this.state.choice[0]])}>{this.dataName[this.state.choice[0]]}</ChoiceButton>
           </Box>
-          <Box width={1 / 4} m='auto'>
+          <Box width={[2 / 5, 2 / 5, 1 / 4]} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, this.dataName[this.state.choice[1]])}>{this.dataName[this.state.choice[1]]}</ChoiceButton>
           </Box>
         </Flex>
-        <Flex flexWrap='wrap' alignItems='center' mx='14em' mt={4}>
-          <Box width={1 / 4} m='auto'>
+        <Flex flexWrap='wrap' alignItems='center' mx={[0, 0, '14em']} mt={4}>
+          <Box width={[2 / 5, 2 / 5, 1 / 4]} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, this.dataName[this.state.choice[2]])}>{this.dataName[this.state.choice[2]]}</ChoiceButton>
           </Box>
-          <Box width={1 / 4} m='auto'>
+          <Box width={[2 / 5, 2 / 5, 1 / 4]} m='auto'>
             <ChoiceButton onClick={this.answer.bind(this, this.dataName[this.state.choice[3]])}>{this.dataName[this.state.choice[3]]}</ChoiceButton>
           </Box>
         </Flex>

@@ -14,6 +14,9 @@ const Timer = styled.div`
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+  @media (max-width: 575.98px) {
+    display: none
+  }
 `
 
 const animatedConfig = {

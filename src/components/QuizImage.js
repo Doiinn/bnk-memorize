@@ -36,7 +36,7 @@ export const QuizImage = styled(animated)`
   outline-style: solid;
 
   @media (max-width: 575.98px) {
-    width: 66vw;
-    height: 50vh;
+    width: 58vw;
+    height: 42vh;
   }
 `

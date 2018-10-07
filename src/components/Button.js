@@ -19,7 +19,7 @@ export const Button = styled.div`
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-  :hover {
+  &:hover {
     background-color: #FF99C3;
     color: white;
   }

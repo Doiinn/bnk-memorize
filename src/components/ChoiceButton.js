@@ -16,7 +16,7 @@ export const ChoiceButton = styled.div`
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-  :hover {
+  &:hover, &:focus {
     background-color: #FF99C3;
     color: white;
   }

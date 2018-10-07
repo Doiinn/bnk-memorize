@@ -93,7 +93,7 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
     outline: 3px;
     outline-color: #FF90C3;
     outline-style: solid;
-    :hover {
+    &:hover {
       background-color: #FF99C3;
       color: white;
     }
@@ -110,7 +110,7 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
     outline: 3px;
     outline-color: #FF90C3;
     outline-style: solid;
-    :hover {
+    &:hover {
       background-color: #FF99C3;
       color: white;
     }
