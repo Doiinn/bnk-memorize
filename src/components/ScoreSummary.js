@@ -38,4 +38,8 @@ export const ScoreSummary = styled(animatedScoreSummary)`
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+  @media (max-width: 575.98px) {
+    width: 85%;
+    font-size: 22px;
+  }
 `

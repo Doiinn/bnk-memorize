@@ -6,6 +6,10 @@ const LabelExtend = styled(Label)`
   color: #fff;
   font-size: 42px;
   margin: 0.25em auto;
+  @media (max-width: 575.98px) {
+    font-size: 28px;
+    padding: 0.25em 0em;
+  }
 `
 
 export const ResultScoreLabel = posed(LabelExtend)({

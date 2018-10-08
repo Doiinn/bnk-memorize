@@ -139,7 +139,7 @@ class Question extends React.Component {
         <Gap />
         <TimeoutMask timer={this.state.timer}>
           <Flex>
-            <Box m='auto' py={10} width={2 / 4}>
+            <Box m='auto' py={10} width={[1, 1, 2 / 4]}>
               <TimeoutLabel width='60%' background='#d63c3d' pose={this.state.timer > 0 ? 'start' : 'end'}>Time's up</TimeoutLabel>
               <ResultScoreLabel width='60%' background='#FF90C3' pose={this.state.timer > 0 ? 'start' : 'end'}>Your Score: {this.state.score.toString()}</ResultScoreLabel>
               <ScoreSummary pose={this.state.timer > 0 ? 'start' : 'end'}>
