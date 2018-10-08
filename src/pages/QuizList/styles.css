@@ -21,14 +21,14 @@
 
 @media (max-width: 575.98px) {
     #timerNum {
-        font-size: 30px;
+        font-size:24px;
         line-height: 1.68;
         margin: 0;
     }
 
     #scoreNum {
         font-size: 24px;
-        line-height: 2.5;
+        line-height: 2.1;
         margin: 0;
     }
 }

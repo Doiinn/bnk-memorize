@@ -158,9 +158,9 @@ class Question extends React.Component {
             <Timer pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.timer.toString()}</SplitText></span></Timer>
           </Box>
           <Box m='auto' width={[1, 1, 2 / 4]}>
-            <Box m='auto' mt={3} width={[68 / 100, 68 / 100, 0]}>
+            <Box m='auto' mt={2} width={[68 / 100, 68 / 100, 0]}>
               <MiniTimer pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.timer.toString()}</SplitText></span></MiniTimer>
-              <MiniScoreLabel width='150px' height='60px' background='#FF90C3'><span id="scoreNum">Score: <SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.score.toString()}</SplitText></span></MiniScoreLabel>
+              <MiniScoreLabel width='150px' height='50px' background='#FF90C3'><span id="scoreNum">Score: <SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.state.score.toString()}</SplitText></span></MiniScoreLabel>
             </Box>
             <QuizImage src={this.memberSet.data[this.state.answer].pic[selectPic]}alt="Who ?" pose={this.state.isPicShow ? 'end' : 'start'} />
           </Box>

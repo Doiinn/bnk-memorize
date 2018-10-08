@@ -20,11 +20,7 @@ const animated = posed.div({
 })
 
 export const QuizImage = styled(animated)`
-  /* 720p = 275px */
-  /* 1080p = 460px */
   width: 20vw;
-  /* 720p = 347px */
-  /* 720p = 581px */
   height: 52vh;
   margin: 1.5em auto;
   background-image: url(${props => props.src});
@@ -38,5 +34,6 @@ export const QuizImage = styled(animated)`
   @media (max-width: 575.98px) {
     width: 58vw;
     height: 42vh;
+    margin-top: 1.25em;
   }
 `

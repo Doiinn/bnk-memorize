@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 const MiniTimer = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: #FF90C3;
   border: 5px solid;
   border-color: #FF90c3;
