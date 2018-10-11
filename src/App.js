@@ -8,6 +8,7 @@ import posed from 'react-pose'
 import Router from './routes'
 import './index.css'
 import { ConnectedRouter } from 'connected-react-router'
+// import { store } from './index'
 
 const animatedNav = posed.nav({
   start: {
@@ -26,7 +27,7 @@ const Header = styled(animatedNav)`
   position: fixed;
   top: 0;
   z-index: 1;
-  margin-left: ${props => props.marginLeft === true ? '225px' : '0'}
+  margin-left: ${props => props.marginLeft === true ? '225px' : '0'};
 
   @media (max-width: 991.98px) {
 
@@ -81,12 +82,25 @@ const removeUnderline = {
 }
 
 const App = ({history, sidenavStatus, thislocation, dispatch}) => {
+  // window.addEventListener('resize', console.log(window.innerWidth))
+  // console.log(store.getState())
 
-  window.addEventListener('resize', console.log(window.innerWidth))
+  let nowLocation = thislocation
+  console.log('Now: ' + nowLocation)
 
   const ButtonMenu = styled.div`
-    color: ${props => props.path === thislocation ? 'white' : 'black'};
-    background-color: ${props => props.path === thislocation ? ' #FF99C3' : 'white'};
+    color: ${props => () => {
+    if (new RegExp(props.path).test(thislocation)) {
+      if (thislocation === '/') return nowLocation === '/' ? 'white' : 'black'
+      else return props.path === '/' ? 'black' : 'white'
+    } else return 'black'
+  }};
+    background-color: ${props => () => {
+    if (new RegExp(props.path).test(thislocation)) {
+      if (thislocation === '/') return nowLocation === '/' ? '#FF99C3' : 'white'
+      else return props.path === '/' ? 'white' : '#FF99C3'
+    } else return 'white'
+  }};
     text-align: center;
     cursor: pointer;
     padding: 5px;
@@ -102,8 +116,18 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
     }
 `
   const ButtonSideMenu = styled.div`
-    color: ${props => props.path === thislocation ? 'white' : 'black'};
-    background-color: ${props => props.path === thislocation ? ' #FF99C3' : 'white'};
+    color: ${props => () => {
+    if (new RegExp(props.path).test(thislocation)) {
+      if (thislocation === '/') return nowLocation === '/' ? 'white' : 'black'
+      else return props.path === '/' ? 'black' : 'white'
+    } else return 'black'
+  }};
+    background-color: ${props => () => {
+    if (new RegExp(props.path).test(thislocation)) {
+      if (thislocation === '/') return nowLocation === '/' ? '#FF99C3' : 'white'
+      else return props.path === '/' ? 'white' : '#FF99C3'
+    } else return 'white'
+  }};
     text-align: center;
     cursor: pointer;
     padding: 5px;

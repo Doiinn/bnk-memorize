@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import posed from 'react-pose'
 
 const animated = posed.div({
-  start: {
+  bgStart: {
     marginLeft: 0
   },
-  end: {
+  bgEnd: {
     marginLeft: '225px'
   }
 })

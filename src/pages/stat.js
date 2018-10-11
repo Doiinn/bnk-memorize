@@ -7,7 +7,7 @@ import { updateLocation } from '../actions'
 const Stat = ({ location, sidenavStatus, dispatch }) => {
   dispatch(updateLocation(location.pathname))
   return (
-    <Background color="#FFD7F9" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'start' : 'end'}>
+    <Background color="#FFD7F9" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'bgStart' : 'bgEnd'}>
       <Gap />
       <h1>Stat</h1>
     </Background>

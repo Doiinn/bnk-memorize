@@ -10,7 +10,8 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 
 const history = createBrowserHistory()
-const store = createStore(
+
+export const store = createStore(
   connectRouter(history)(rootReducer),
   compose(
     applyMiddleware(routerMiddleware(history)

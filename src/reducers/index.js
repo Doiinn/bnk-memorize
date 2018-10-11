@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import counters from './counters'
+import quiz from './quiz'
 import sidenavstatus from './sidenavstatus'
 import thislocation from './thislocation'
 
 export default combineReducers({
-  counters,
+  quiz,
   sidenavstatus,
   thislocation
 })

@@ -16,7 +16,7 @@ const Quiz = ({ location, sidenavStatus, dispatch }) => {
   dispatch(updateLocation(location.pathname))
 
   return (
-    <Background color="#FFD7F9" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'start' : 'end'}>
+    <Background color="#FFD7F9" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'bgStart' : 'bgEnd'}>
       <Gap />
       <NavLink to="/quiz/1" style={removeUnderline}><QuizBox quizname='รู้ไหม ใครเอ่ย ? (รุ่น 1)' quizpic={picGen1}></QuizBox></NavLink>
       <NavLink to="/quiz/2" style={removeUnderline}><QuizBox quizname='รู้ไหม ใครเอ่ย ? (รุ่น 2)' quizpic={picGen2}></QuizBox></NavLink>
