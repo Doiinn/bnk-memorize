@@ -5,7 +5,8 @@ let initialState = {
   correct: 0,
   wrong: 0,
   score: 0,
-  isPicShow: false
+  isPicShow: false,
+  isQuizFinished: false
 }
 
 export default (state = initialState, action) => {
@@ -16,7 +17,8 @@ export default (state = initialState, action) => {
       })
     case 'ZERO_SECOND':
       return Object.assign({}, state, {
-        timer: 0
+        timer: 0,
+        isQuizFinished: true
       })
     case 'CORRECT_CHOICE':
       return Object.assign({}, state, {

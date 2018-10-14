@@ -196,6 +196,7 @@ class Question extends React.Component {
   }
 
   componentDidMount() {
+    this.props.reset()
     this.randomChoice()
   }
 
