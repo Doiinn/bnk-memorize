@@ -20,7 +20,6 @@ import './styles.css'
 import { Link } from 'react-router-dom'
 // import lifecycle from 'react-pure-lifecycle'
 import { decreaseSecond, timeOut, correct, wrong, closePic, randomChoice, reset, updateLocation } from '../../actions'
-import { store } from '../../index'
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max))
@@ -193,15 +192,23 @@ class Question extends React.Component {
     this.tick = this.tick.bind(this)
     this.resetState = this.resetState.bind(this)
     this.tick()
+    this.reloadCheck = (e) => {
+      // Cancel the event as stated by the standard.
+      e.preventDefault()
+      // Chrome requires returnValue to be set.
+      e.returnValue = ''
+    }
   }
 
   componentDidMount() {
     this.props.reset()
     this.randomChoice()
+    window.addEventListener('beforeunload', this.reloadCheck)
   }
 
   componentWillUnmount() {
     clearInterval(this.timer)
+    window.removeEventListener('beforeunload', this.reloadCheck)
   }
 
   resetState() {
@@ -256,7 +263,6 @@ class Question extends React.Component {
   }
 
   render() {
-    console.log(store.getState())
     return (
       <Background color="#FFD7F9" marginLeft={this.props.sidenavStatus} pose={this.props.sidenavStatus === false ? 'bgStart' : 'bgEnd'}>
         <Gap />
