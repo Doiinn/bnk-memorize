@@ -177,13 +177,6 @@ class Question extends React.Component {
   constructor(props) {
     super(props)
     this.props.updateLocation(this.props.location.pathname)
-    if (this.props.gen === '1') {
-      this.member = 25
-      this.photoset = 6
-    } else if (this.props.gen === '2') {
-      this.member = 27
-      this.photoset = 2
-    }
     this.memberSet = this.props.data
     this.dataName = (this.memberSet.data).map((values, index, array) => {
       return values.name[0]
@@ -199,10 +192,18 @@ class Question extends React.Component {
       // Chrome requires returnValue to be set.
       e.returnValue = ''
     }
+    console.log('call')
   }
 
   componentDidMount() {
     this.props.reset()
+    if (this.props.gen === '1') {
+      this.member = 25
+      this.photoset = 6
+    } else if (this.props.gen === '2') {
+      this.member = 27
+      this.photoset = 2
+    }
     this.randomChoice()
     window.addEventListener('beforeunload', this.reloadCheck)
   }
