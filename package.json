@@ -1,6 +1,7 @@
 {
   "name": "bnk-memorize",
   "version": "0.1.0",
+  "homepage": "http://doiinn.github.io/bnk-memorize",
   "private": true,
   "dependencies": {
     "connected-react-router": "^4.5.0",
@@ -33,9 +34,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "prettier": "./node_modules/.bin/prettier --semi=false --single-quote=true --write src/*.js"
+    "prettier": "./node_modules/.bin/prettier --semi=false --single-quote=true --write src/*.js",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.1.0"
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "gh-pages": "^2.0.1"
   }
 }
