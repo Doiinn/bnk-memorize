@@ -38,7 +38,10 @@ export default (state = initialState, action) => {
         answer: action.answer, choice: action.choice, isPicShow: true
       })
     case 'RESET':
-      return initialState
+      return Object.assign({}, initialState, {
+        answer: state.answer,
+        choice: state.choice
+      })
     default:
       return state
   }

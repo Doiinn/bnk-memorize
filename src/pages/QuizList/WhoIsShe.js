@@ -20,6 +20,7 @@ import './styles.css'
 import { Link } from 'react-router-dom'
 // import lifecycle from 'react-pure-lifecycle'
 import { decreaseSecond, timeOut, correct, wrong, closePic, randomChoice, reset, updateLocation } from '../../actions'
+import { store } from '../../index'
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max))
@@ -214,7 +215,10 @@ class Question extends React.Component {
 
   resetState() {
     this.props.reset()
-    this.randomChoice()
+    setTimeout(() => {
+      this.randomChoice()
+    }, 250)
+
     this.tick()
   }
 
