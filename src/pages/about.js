@@ -3,13 +3,28 @@ import { connect } from 'react-redux'
 import { Background } from '../components/Background'
 import { Gap } from '../components/Gap'
 import { updateLocation } from '../actions'
+import { Flex, Box } from 'grid-styled'
+
+const center = {
+  textAlign: 'center'
+}
 
 const About = ({ location, sidenavStatus, dispatch }) => {
   dispatch(updateLocation(location.pathname))
   return (
-    <Background color="#D7FFFF" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'bgStart' : 'bgEnd'}>
+    <Background color="#FFD7F9" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'bgStart' : 'bgEnd'}>
       <Gap />
-      <h1>About</h1>
+      <Flex alignItems='center'>
+        <Box m='auto'>
+          <h1 style={center}>About</h1>
+          <p style={center}>BNK MEMORIZE Version 0.1</p>
+          <p style={center}>Most photo from <a href='https://www.bnk48.com'>www.bnk48.com</a></p>
+          <p style={center}>This website made for improve my skill</p>
+          <p style={center}>Not for commerce and profile</p>
+          <p style={center}>Hosted with ❤ by github</p>
+          <p style={center}>Made with react</p>
+        </Box>
+      </Flex>
     </Background>
   )
 }

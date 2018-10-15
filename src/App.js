@@ -81,12 +81,7 @@ const removeUnderline = {
 }
 
 const App = ({history, sidenavStatus, thislocation, dispatch}) => {
-  // window.addEventListener('resize', console.log(window.innerWidth))
-  // console.log(store.getState())
-
   let nowLocation = thislocation
-  console.log('Now: ' + nowLocation)
-
   const ButtonMenu = styled.div`
     color: ${props => () => {
     if (new RegExp(props.path).test(thislocation)) {
@@ -142,6 +137,13 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
     }
   `
 
+  const BetaTag = styled.sup`
+    font-size: 14px;
+    vertical-align: text-top;
+    font-weight: 200;
+    line-height: 2.25;
+  `
+
   return (
     <ConnectedRouter history={history}>
       <React.Fragment>
@@ -165,7 +167,7 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
           <Flex flexWrap='wrap' alignItems='center'>
             <Box p={2} width={[1, 1, 1 / 3]}>
               <i className="material-icons" id="mobile-menu" onClick={() => dispatch(sidenavmenu())}>menu</i>
-              <Label>BNK MEMORIZE</Label>
+              <Label>BNK MEMORIZE<BetaTag>BETA</BetaTag></Label>
             </Box>
             <Box p={2} width={[0, 0, 1 / 8]} m='auto'>
               <NavLink exact to="/" style={removeUnderline}><ButtonMenu path='/'>หน้าแรก</ButtonMenu></NavLink>
