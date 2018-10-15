@@ -208,6 +208,7 @@ class Question extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.timer)
+    this.props.reset()
     window.removeEventListener('beforeunload', this.reloadCheck)
   }
 
