@@ -4,7 +4,7 @@ import { Background } from '../components/Background'
 import { Gap } from '../components/Gap'
 import { updateLocation } from '../actions'
 
-const Stat = ({ location, sidenavStatus, dispatch }) => {
+const MyStat = ({ location, sidenavStatus, dispatch }) => {
   dispatch(updateLocation(location.pathname))
   return (
     <Background color="#FFD7F9" marginLeft={sidenavStatus} pose={sidenavStatus === false ? 'bgStart' : 'bgEnd'}>
@@ -20,6 +20,6 @@ const mapStateToProps = state => ({
   thislocation: state.thislocation || '/'
 })
 
-const AppWithConnect = connect(mapStateToProps)(Stat)
+const AppWithConnect = connect(mapStateToProps)(MyStat)
 
 export default AppWithConnect

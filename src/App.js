@@ -8,7 +8,6 @@ import posed from 'react-pose'
 import Router from './routes'
 import './index.css'
 import { ConnectedRouter } from 'connected-react-router'
-// import { store } from './index'
 
 const animatedNav = posed.nav({
   start: {
@@ -155,7 +154,7 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
               <ButtonSideMenu path='/quiz' onClick={() => { dispatch(sidenavmenu()); history.push('/quiz') }}>คำถาม</ButtonSideMenu>
             </Box>
             <Box p={2} width={1} m='auto'>
-              <ButtonSideMenu path='/stat' onClick={() => { dispatch(sidenavmenu()); history.push('/stat') }}>สถิติ</ButtonSideMenu>
+              <ButtonSideMenu path='/mystat' onClick={() => { dispatch(sidenavmenu()); history.push('/mystat') }}>สถิติของฉัน</ButtonSideMenu>
             </Box>
             <Box p={2} width={1} m='auto'>
               <ButtonSideMenu path='/about' onClick={() => { dispatch(sidenavmenu()); history.push('/about') }}>เกี่ยวกับ</ButtonSideMenu>
@@ -175,7 +174,7 @@ const App = ({history, sidenavStatus, thislocation, dispatch}) => {
               <NavLink to="/quiz" style={removeUnderline}><ButtonMenu path='/quiz'>คำถาม</ButtonMenu></NavLink>
             </Box>
             <Box p={2} width={[0, 0, 1 / 8]} m='auto'>
-              <NavLink to="/stat" style={removeUnderline}><ButtonMenu path='/stat'>สถิติ</ButtonMenu></NavLink>
+              <NavLink to="/mystat" style={removeUnderline}><ButtonMenu path='/mystat'>สถิติของฉัน</ButtonMenu></NavLink>
             </Box>
             <Box p={2} width={[0, 0, 1 / 8]} m='auto'>
               <NavLink to="/about" style={removeUnderline}><ButtonMenu path='/about'>เกี่ยวกับ</ButtonMenu></NavLink>
