@@ -1,7 +1,7 @@
 {
   "name": "bnk-memorize",
   "version": "0.1.0",
-  "homepage": "http://doiinn.github.io/bnk-memorize",
+  "homepage": "https://doiinn.github.io/bnk-memorize",
   "private": true,
   "dependencies": {
     "connected-react-router": "^4.5.0",
