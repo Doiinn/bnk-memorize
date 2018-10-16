@@ -154,7 +154,7 @@ class Question extends React.Component {
               <MiniTimer pose={'idle'}><span id="timerNum"><SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.props.quiz.timer.toString()}</SplitText></span></MiniTimer>
               <MiniScoreLabel width='150px' height='50px' background='#FF90C3'><span id="scoreNum">Score: <SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.props.quiz.score.toString()}</SplitText></span></MiniScoreLabel>
             </Box>
-            <QuizImage src={this.memberSet.data[this.props.quiz.answer].pic[selectPic]}alt="Who ?" pose={this.props.quiz.isPicShow ? 'end' : 'start'} />
+            <QuizImage src={this.memberSet.data[this.props.quiz.answer].pic[selectPic]}alt="Who ?" onLoad={() => {console.log(this.dataName[this.props.quiz.answer])}} pose={this.props.quiz.isPicShow ? 'end' : 'start'} />
           </Box>
           <Box mt={3} mr={3} width={[0, 0, 1 / 4]}>
             <ScoreLabel width='300px' height='75px' background='#FF90C3'><span id="scoreNum">Score: <SplitText initialPose="exit" pose="enter" charPoses={animatedConfig}>{this.props.quiz.score.toString()}</SplitText></span></ScoreLabel>

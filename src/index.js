@@ -5,11 +5,11 @@ import App from './App'
 // import registerServiceWorker from './registerServiceWorker'
 import rootReducer from './reducers'
 import { Provider } from 'react-redux'
-import { createBrowserHistory } from 'history'
+import { createHashHistory } from 'history'
 import { applyMiddleware, compose, createStore } from 'redux'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 
-const history = createBrowserHistory()
+const history = createHashHistory()
 
 export const store = createStore(
   connectRouter(history)(rootReducer),
